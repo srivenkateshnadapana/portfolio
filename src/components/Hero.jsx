@@ -6,21 +6,21 @@ const Hero = () => {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   
-  // Track scroll timeline over the entire 300vh section to drive the 3D canvas and text layers
+  // Track scroll timeline over the entire 500vh section to drive the 3D canvas and text layers
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
   
-  // Replicating scroll-linked opacity and transform from reference site using scrollYProgress (scales perfectly on all screen heights!)
-  const y1 = useTransform(scrollYProgress, [0, 0.28], [0, -90]);
-  const opacity1 = useTransform(scrollYProgress, [0, 0.22], [1, 0]);
+  // Replicating scroll-linked opacity and transform from reference site over 500vh scroll track
+  const y1 = useTransform(scrollYProgress, [0, 0.20], [0, -100]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.18], [1, 0]);
 
-  const y2 = useTransform(scrollYProgress, [0.28, 0.46, 0.62], [60, 0, -60]);
-  const opacity2 = useTransform(scrollYProgress, [0.28, 0.40, 0.50, 0.62], [0, 1, 1, 0]);
+  const y2 = useTransform(scrollYProgress, [0.20, 0.30, 0.48, 0.58], [60, 0, 0, -60]);
+  const opacity2 = useTransform(scrollYProgress, [0.20, 0.28, 0.48, 0.58], [0, 1, 1, 0]);
 
-  const y3 = useTransform(scrollYProgress, [0.62, 0.78, 0.94], [60, 0, -60]);
-  const opacity3 = useTransform(scrollYProgress, [0.62, 0.72, 0.82, 0.94], [0, 1, 1, 0]);
+  const y3 = useTransform(scrollYProgress, [0.58, 0.68, 0.85, 0.95], [60, 0, 0, -60]);
+  const opacity3 = useTransform(scrollYProgress, [0.58, 0.64, 0.85, 0.95], [0, 1, 1, 0]);
 
   // Mouse Parallax for 3D Image
   const mouseX = useMotionValue(0);
@@ -51,7 +51,7 @@ const Hero = () => {
   }, [mouseX, mouseY]);
 
   return (
-    <section ref={containerRef} className="relative" style={{ height: '300vh' }}>
+    <section ref={containerRef} className="relative" style={{ height: '500vh' }}>
       <div className="sticky top-0 h-screen w-full relative overflow-hidden bg-[#0a0a0a]">
         
         {/* Glowing Background Trails (Replicated via CSS gradients) */}
