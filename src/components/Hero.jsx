@@ -47,70 +47,70 @@ const Hero = () => {
   return (
     <section ref={containerRef} className="relative" style={{ height: '500vh' }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0a0a0a]">
-        
-        {/* Glowing Background Nebula Trails (Replicated via CSS gradients) */}
-        <div className="absolute inset-0 z-0 opacity-30 mix-blend-screen pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gradient-to-r from-[#f59e0b] to-transparent rounded-[100%] blur-[120px] rotate-[-15deg] animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gradient-to-r from-transparent to-[#8b5cf6] rounded-[100%] blur-[120px] rotate-[15deg] animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
+        <div className="relative w-full h-full">
+          {/* Glowing Background Nebula Trails (Replicated via CSS gradients) */}
+          <div className="absolute inset-0 z-0 opacity-30 mix-blend-screen pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gradient-to-r from-[#f59e0b] to-transparent rounded-[100%] blur-[120px] rotate-[-15deg] animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gradient-to-r from-transparent to-[#8b5cf6] rounded-[100%] blur-[120px] rotate-[15deg] animate-pulse" style={{ animationDelay: '1s' }}></div>
+          </div>
 
-        {/* 3D Holographic Neural Network Grid Layer */}
-        <div className="absolute inset-0 z-10 w-full h-full pointer-events-none select-none">
-          <HolographicFace scrollYProgress={scrollYProgress} />
-        </div>
+          {/* 3D Holographic Neural Network Grid Layer */}
+          <div className="absolute inset-0 z-10 w-full h-full pointer-events-none select-none">
+            <HolographicFace scrollYProgress={scrollYProgress} />
+          </div>
 
-        {/* Premium Vignette Overlay */}
-        <div 
-          className="absolute inset-0 pointer-events-none z-[15]" 
-          style={{ background: 'radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.75) 100%)' }}
-        />
+          {/* Premium Vignette Overlay */}
+          <div 
+            className="absolute inset-0 pointer-events-none z-[15]" 
+            style={{ background: 'radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.75) 100%)' }}
+          />
 
-        {/* Slide 1: Title Card */}
-        <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pointer-events-none mix-blend-normal"
-          style={{ opacity: opacity1, y: y1 }}
-        >
-          <p className="text-sm tracking-[0.35em] text-[#a3e635] uppercase mb-5 font-light">
-            CREATIVE TECHNOLOGIST
-          </p>
-          <h1 className="text-5xl md:text-8xl font-bold text-white leading-none tracking-tight">
-            Sri Venkatesh<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">Nadapana</span>
-          </h1>
-          <p className="mt-6 text-lg md:text-2xl text-white/55 font-light">
-            Robotics Engineer · AI Integration · Creative Front-End
-          </p>
-        </motion.div>
- 
-        {/* Slide 2: What I Do */}
-        <motion.div
-          className="absolute inset-0 flex flex-col items-start justify-center px-10 md:px-24 z-20 pointer-events-none"
-          style={{ opacity: opacity2, y: y2 }}
-        >
-          <p className="text-xs tracking-[0.35em] text-[#6366f1] uppercase mb-3 font-light">
-            WHAT I DO
-          </p>
-          <h2 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
-            I build digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">experiences.</span>
-          </h2>
-          <p className="mt-5 text-white/50 text-lg font-light max-w-md">
-            MERN Stack · Cloud Infrastructure · AI
-          </p>
-        </motion.div>
+          {/* Slide 1: Title Card */}
+          <motion.div
+            className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pointer-events-none mix-blend-normal"
+            style={{ opacity: opacity1, y: y1 }}
+          >
+            <p className="text-sm tracking-[0.35em] text-[#a3e635] uppercase mb-5 font-light">
+              CREATIVE TECHNOLOGIST
+            </p>
+            <h1 className="text-5xl md:text-8xl font-bold text-white leading-none tracking-tight">
+              Sri Venkatesh<br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">Nadapana</span>
+            </h1>
+            <p className="mt-6 text-lg md:text-2xl text-white/55 font-light">
+              Robotics Engineer · AI Integration · Creative Front-End
+            </p>
+          </motion.div>
+   
+          {/* Slide 2: What I Do */}
+          <motion.div
+            className="absolute inset-0 flex flex-col items-start justify-center px-10 md:px-24 z-20 pointer-events-none"
+            style={{ opacity: opacity2, y: y2 }}
+          >
+            <p className="text-xs tracking-[0.35em] text-[#6366f1] uppercase mb-3 font-light">
+              WHAT I DO
+            </p>
+            <h2 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
+              I build digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">experiences.</span>
+            </h2>
+            <p className="mt-5 text-white/50 text-lg font-light max-w-md">
+              MERN Stack · Cloud Infrastructure · AI
+            </p>
+          </motion.div>
 
-        {/* Slide 3: Philosophy */}
-        <motion.div
-          className="absolute inset-0 flex flex-col items-end justify-center px-10 md:px-24 z-20 pointer-events-none text-right"
-          style={{ opacity: opacity3, y: y3 }}
-        >
-          <p className="text-xs tracking-[0.35em] text-[#f59e0b] uppercase mb-3 font-light">
-            My Philosophy
-          </p>
-          <h2 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
-            Bridging <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">hardware</span> &amp; software.
-          </h2>
-          <p className="mt-5 text-white/50 text-lg font-light max-w-md">
-            From complex software systems to physical hardware deployed at scale.
+          {/* Slide 3: Philosophy */}
+          <motion.div
+            className="absolute inset-0 flex flex-col items-end justify-center px-10 md:px-24 z-20 pointer-events-none text-right"
+            style={{ opacity: opacity3, y: y3 }}
+          >
+            <p className="text-xs tracking-[0.35em] text-[#f59e0b] uppercase mb-3 font-light">
+              My Philosophy
+            </p>
+            <h2 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
+              Bridging <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">hardware</span> &amp; software.
+            </h2>
+            <p className="mt-5 text-white/50 text-lg font-light max-w-md">
+              From complex software systems to physical hardware deployed at scale.
           </p>
         </motion.div>
 
@@ -119,7 +119,8 @@ const Hero = () => {
           <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent animate-pulse"></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 
