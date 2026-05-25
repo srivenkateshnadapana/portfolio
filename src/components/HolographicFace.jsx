@@ -30,8 +30,9 @@ const HolographicFace = ({ scrollYProgress }) => {
     renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // 4. Generate 18,000 particles with structured target coordinates (Circuit Board Grid)
-    const PARTICLE_COUNT = 18000;
+    // 4. Generate 25,000 particles with structured target coordinates (Circuit Board Grid)
+    const PARTICLE_COUNT = 25000;
+
     const positions = new Float32Array(PARTICLE_COUNT * 3);
     const targets = new Float32Array(PARTICLE_COUNT * 3);
     const randoms = new Float32Array(PARTICLE_COUNT * 3);
