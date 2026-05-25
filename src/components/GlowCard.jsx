@@ -10,6 +10,12 @@ const GlowCard = ({
 }) => {
   const cardRef = useRef(null);
 
+  // Extract layout/flex/text classes to pass down to the inner wrapper, preserving card alignments
+  const flexClasses = className
+    .split(' ')
+    .filter(c => c.startsWith('flex') || c.startsWith('justify-') || c.startsWith('items-') || c.startsWith('text-'))
+    .join(' ');
+
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
@@ -50,8 +56,8 @@ const GlowCard = ({
         }}
       />
 
-      {/* Card Content wrapper (forces relative z-index to overlay the spotlight layers) */}
-      <div className="relative z-10 w-full h-full">
+      {/* Card Content wrapper (forces relative z-index to overlay the spotlight layers, preserving layout context) */}
+      <div className={`relative z-10 w-full h-full ${flexClasses}`}>
         {children}
       </div>
     </div>

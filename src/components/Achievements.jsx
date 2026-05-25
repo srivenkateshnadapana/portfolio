@@ -41,6 +41,7 @@ const Achievements = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, delay: index * 0.1 }}
+            className="h-full flex flex-col"
           >
             <GlowCard
               glowColor={item.color}
