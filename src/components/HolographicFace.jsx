@@ -16,11 +16,8 @@ const HolographicFace = ({ scrollYProgress }) => {
     let linesMaterial;
     let clock = new THREE.Clock();
 
-    const container = containerRef.current;
-    if (!container) return;
-
-    const w = container.clientWidth;
-    const h = container.clientHeight;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
 
     // 1. Scene Setup
     scene = new THREE.Scene();
@@ -116,9 +113,8 @@ const HolographicFace = ({ scrollYProgress }) => {
     // 7. Mouse Tracker Parallax
     const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
     const handleMouseMove = (e) => {
-      const rect = container.getBoundingClientRect();
-      mouse.targetX = ((e.clientX - rect.left) / rect.width) - 0.5;
-      mouse.targetY = ((e.clientY - rect.top) / rect.height) - 0.5;
+      mouse.targetX = (e.clientX / window.innerWidth) - 0.5;
+      mouse.targetY = (e.clientY / window.innerHeight) - 0.5;
     };
     window.addEventListener('mousemove', handleMouseMove);
 
@@ -224,9 +220,9 @@ const HolographicFace = ({ scrollYProgress }) => {
 
     // 9. Handle dynamic resizing
     const handleResize = () => {
-      if (!container || !renderer || !camera) return;
-      const wWidth = container.clientWidth;
-      const wHeight = container.clientHeight;
+      if (!renderer || !camera) return;
+      const wWidth = window.innerWidth;
+      const wHeight = window.innerHeight;
 
       camera.aspect = wWidth / wHeight;
       camera.updateProjectionMatrix();
@@ -251,8 +247,8 @@ const HolographicFace = ({ scrollYProgress }) => {
   }, [scrollYProgress]);
 
   return (
-    <div ref={containerRef} className="w-full h-full relative flex items-center justify-center">
-      <canvas ref={canvasRef} className="w-full h-full block" />
+    <div ref={containerRef} className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none">
+      <canvas ref={canvasRef} className="w-full h-full block pointer-events-none" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
     </div>
   );
 };

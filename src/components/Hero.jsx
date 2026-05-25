@@ -12,15 +12,15 @@ const Hero = () => {
     offset: ["start start", "end end"]
   });
   
-  // Replicating scroll-linked opacity and transform from reference site
-  const y1 = useTransform(scrollY, [0, 500], [0, -100]);
-  const opacity1 = useTransform(scrollY, [0, 300], [1, 0]);
+  // Replicating scroll-linked opacity and transform from reference site using scrollYProgress (resolves dead zones)
+  const y1 = useTransform(scrollYProgress, [0, 0.3], [0, -80]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
-  const y2 = useTransform(scrollY, [300, 800], [50, -50]);
-  const opacity2 = useTransform(scrollY, [300, 500, 800], [0, 1, 0]);
+  const y2 = useTransform(scrollYProgress, [0.3, 0.48, 0.65], [60, 0, -60]);
+  const opacity2 = useTransform(scrollYProgress, [0.3, 0.45, 0.65], [0, 1, 0]);
 
-  const y3 = useTransform(scrollY, [800, 1300], [50, -50]);
-  const opacity3 = useTransform(scrollY, [800, 1000, 1300], [0, 1, 0]);
+  const y3 = useTransform(scrollYProgress, [0.65, 0.8, 0.95], [60, 0, -60]);
+  const opacity3 = useTransform(scrollYProgress, [0.65, 0.8, 0.95], [0, 1, 0]);
 
   // Mouse Parallax for 3D Image
   const mouseX = useMotionValue(0);
@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <section ref={containerRef} className="relative" style={{ height: '300vh' }}>
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0a0a0a]">
+      <div className="sticky top-0 h-screen w-full relative overflow-hidden bg-[#0a0a0a]">
         
         {/* Glowing Background Trails (Replicated via CSS gradients) */}
         <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
