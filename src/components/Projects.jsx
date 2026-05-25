@@ -15,10 +15,10 @@ const Projects = () => {
       id: "02",
       tag: "IoT & Cloud Architecture",
       title: "Cloud Smart Home Automation",
-      desc: "An end-to-end smart automation framework capable of remote monitoring and appliance control with secure, low-latency telemetry.",
-      bullet: "✦ Cloud-integrated real-time web dashboards.",
+      desc: "Developed a fully integrated IoT solution using ESP32 microcontrollers and the Blynk platform, featuring real-time monitoring for hazards and remote control via MQTT.",
+      bullet: "✦ Built custom mobile interfaces with automated water management.",
       color: "#10b981",
-      tech: ["IoT Microcontrollers", "AWS/GCP IoT Core", "Security Protocols"]
+      tech: ["ESP32", "Blynk", "MQTT", "AWS/GCP IoT Core"]
     },
     {
       id: "03",

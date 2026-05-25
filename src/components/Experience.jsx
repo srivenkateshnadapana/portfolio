@@ -9,8 +9,8 @@ const Experience = () => {
       location: 'Onsite / Remote',
       color: '#6366f1',
       details: [
-        'Delivered specialized technical modules spanning cloud infrastructure, advanced systems engineering, and automated technical operations.',
-        'Translated high-level software/hardware architectures into structured curriculum for professional engineering fast-tracks.'
+        'Leading technical training for MERN stack, DevOps, and AI. Developing comprehensive curricula for long-term and short-term technical internships.',
+        'Mentored 200+ students across Aditya Degree Colleges on Full-Stack Development and Data Analytics Using Python (APSCHE & AP Govt initiatives).'
       ]
     },
     {

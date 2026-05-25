@@ -76,7 +76,7 @@ const Contact = () => {
             GitHub
           </a>
           <a
-            href="https://wa.me/918977885516"
+            href="https://wa.me/917013153753"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"

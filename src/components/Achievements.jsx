@@ -28,6 +28,7 @@ const Achievements = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         {[
+          { icon: '🏆', title: 'Felicitation for Excellence', desc: 'Felicitated by Aditya Degree College, Bhimavaram for Excellence in Technical Mentorship.' },
           { icon: '🎯', title: 'K21Academy (GoogleAI SME)', desc: 'Approached directly by Atul Kumar (CEO) regarding technical alignment for Google AI curriculum paths.' },
           { icon: '🚀', title: 'NxtWave Disruptive Tech', desc: 'Shortlisted & personally invited for high-impact technical instructor tracks (GenAI and MERN).' },
           { icon: '🌐', title: 'Google Cloud Tech Series', desc: 'Personally invited to Cloud Tech Series (AI in Action & OnBoard Edition).' }

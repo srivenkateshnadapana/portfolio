@@ -61,13 +61,12 @@ const About = () => {
               <div className="text-center">
                 <p className="text-white/50 text-sm mb-2">Core Stack</p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">ROS</span>
-                   <span className="px-3 py-1 bg-[#8b5cf6]/20 text-[#8b5cf6] rounded-full text-xs">PLC</span>
+                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">MERN Stack</span>
+                   <span className="px-3 py-1 bg-[#8b5cf6]/20 text-[#8b5cf6] rounded-full text-xs">ROS / PLC</span>
                    <span className="px-3 py-1 bg-[#a855f7]/20 text-[#a855f7] rounded-full text-xs">AWS / GCP</span>
-                   <span className="px-3 py-1 bg-[#ec4899]/20 text-[#ec4899] rounded-full text-xs">Python</span>
-                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">GenAI</span>
-                   <span className="px-3 py-1 bg-[#10b981]/20 text-[#10b981] rounded-full text-xs">Linux</span>
-                   <span className="px-3 py-1 bg-[#f59e0b]/20 text-[#f59e0b] rounded-full text-xs">VMware</span>
+                   <span className="px-3 py-1 bg-[#ec4899]/20 text-[#ec4899] rounded-full text-xs">ESP32 / IoT</span>
+                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">Python / SQL</span>
+                   <span className="px-3 py-1 bg-[#10b981]/20 text-[#10b981] rounded-full text-xs">GenAI</span>
                 </div>
               </div>
             </div>
