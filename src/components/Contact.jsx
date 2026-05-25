@@ -97,9 +97,6 @@ const Contact = () => {
         <p className="text-white/20 text-sm">
           © 2026 Sri Venkatesh Nadapana.
         </p>
-        <p className="text-white/20 text-sm">
-          Crafted with care in Vizag, India 🇮🇳
-        </p>
       </div>
     </section>
   );
