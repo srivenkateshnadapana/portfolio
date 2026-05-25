@@ -1,0 +1,143 @@
+import { motion } from 'framer-motion';
+
+const About = () => {
+  return (
+    <section id="about" className="relative py-32 px-6 md:px-24 bg-[#0a0a0a]">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="flex items-center gap-4 mb-16"
+      >
+        <span className="text-[#6366f1] text-sm tracking-[0.3em] uppercase font-light">
+          01 / About
+        </span>
+        <div className="flex-1 h-px bg-white/10"></div>
+      </motion.div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        {/* Main Bio Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm rounded-3xl p-8 transition-all duration-300 hover:border-white/20 lg:col-span-2 flex flex-col justify-between group"
+        >
+          <div className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+               style={{ background: 'radial-gradient(400px circle at 50% 50%, rgba(99, 102, 241, 0.08), transparent 80%)' }}>
+          </div>
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8">
+              A developer who <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7] bg-300% animate-gradient">thinks</span> beyond code.
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed mb-6">
+              I'm Sri Venkatesh Nadapana, a Robotics Engineer, Cloud Architecture Specialist, and Educator pursuing B.Tech at Aditya College of Engineering &amp; Technology (2022–2026).
+            </p>
+            <p className="text-white/60 text-lg leading-relaxed mb-6">
+              I've worked across the spectrum — from building cloud-native automation portals at startups to integrating AI agents at Ford Global Technology. I founded the Be the Change community impacting 2,000+ students and led GDG on Campus.
+            </p>
+            <p className="text-white/60 text-lg leading-relaxed mb-6">
+              I thrive at the intersection of engineering, system design, and education.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* 3D Skill Sphere Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, delay: 0.1 }}
+          className="relative overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm rounded-3xl p-8 transition-all duration-300 hover:border-white/20 lg:col-span-1 flex flex-col justify-between items-center text-center group"
+        >
+          <div className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+               style={{ background: 'radial-gradient(400px circle at 50% 50%, rgba(99, 102, 241, 0.08), transparent 80%)' }}>
+          </div>
+          <div className="relative z-10 w-full">
+            <h3 className="text-white font-semibold text-lg mb-2">Technical Skills</h3>
+            <p className="text-white/40 text-xs tracking-wider uppercase mb-4">Interactive 3D Sphere</p>
+            <div className="relative w-full h-[320px] flex items-center justify-center overflow-hidden border border-white/5 rounded-2xl bg-black/50">
+              {/* Fallback for canvas since we aren't using three.js here directly */}
+              <div className="text-center">
+                <p className="text-white/50 text-sm mb-2">Core Stack</p>
+                <div className="flex flex-wrap gap-2 justify-center">
+                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">C / C++</span>
+                   <span className="px-3 py-1 bg-[#8b5cf6]/20 text-[#8b5cf6] rounded-full text-xs">Python</span>
+                   <span className="px-3 py-1 bg-[#a855f7]/20 text-[#a855f7] rounded-full text-xs">Docker</span>
+                   <span className="px-3 py-1 bg-[#ec4899]/20 text-[#ec4899] rounded-full text-xs">AWS</span>
+                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">Jenkins</span>
+                   <span className="px-3 py-1 bg-[#10b981]/20 text-[#10b981] rounded-full text-xs">Terraform</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Education Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, delay: 0.2 }}
+          className="relative overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm rounded-3xl p-8 transition-all duration-300 hover:border-white/20 lg:col-span-1 flex flex-col justify-between group"
+        >
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-[#6366f1]">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                </svg>
+              </div>
+              <div>
+                <p className="text-[#6366f1] text-xs tracking-widest uppercase">Education</p>
+                <h3 className="text-white font-semibold">Academic Journey</h3>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-white font-medium text-base">Aditya College of Engineering &amp; Technology</h4>
+                <p className="text-white/60 text-sm mt-1">Bachelor of Technology (B.Tech)</p>
+                <div className="flex items-center gap-2 mt-2 text-xs text-white/40">
+                  <span>Aug 2022 – April 2026</span><span>•</span><span>Surampalem, A.P</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Soft Skills Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, delay: 0.3 }}
+          className="relative overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm rounded-3xl p-8 transition-all duration-300 hover:border-white/20 lg:col-span-2 flex flex-col justify-between group"
+        >
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-[#a855f7]">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 113.536 0V19h2v2h-2a3 3 0 01-3-3v-3.1m1.4-5.4a2 2 0 112.83 0"></path>
+                </svg>
+              </div>
+              <div>
+                <p className="text-[#a855f7] text-xs tracking-widest uppercase">Soft Skills</p>
+                <h3 className="text-white font-semibold">Core Competencies</h3>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {['Leadership', 'Communication', 'Teamwork & Collaboration', 'Problem-Solving', 'Mentorship'].map((skill, i) => (
+                <div key={i} className="flex items-center gap-3 p-4 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300">
+                  <div className="p-2 rounded-xl bg-white/5">
+                    <div className="w-2 h-2 rounded-full bg-[#6366f1]"></div>
+                  </div>
+                  <span className="text-white/80 font-medium text-sm">{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
