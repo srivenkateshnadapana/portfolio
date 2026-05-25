@@ -30,8 +30,8 @@ const HolographicFace = ({ scrollYProgress }) => {
     renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // 4. Generate 25,000 particles with structured target coordinates (Circuit Board Grid)
-    const PARTICLE_COUNT = 25000;
+    // 4. Generate 18,000 particles with structured target coordinates (Circuit Board Grid)
+    const PARTICLE_COUNT = 18000;
     const positions = new Float32Array(PARTICLE_COUNT * 3);
     const targets = new Float32Array(PARTICLE_COUNT * 3);
     const randoms = new Float32Array(PARTICLE_COUNT * 3);
@@ -200,8 +200,8 @@ const HolographicFace = ({ scrollYProgress }) => {
           vec4 mvPosition = modelViewMatrix * vec4(currentPos, 1.0);
           gl_Position = projectionMatrix * mvPosition;
           
-          // Size attenuation (particles are larger when close to the camera)
-          gl_PointSize = (3.2 + aRandom.x * 2.8) * (8.0 / -mvPosition.z);
+          // Size attenuation (particles are extremely fine and elegant, preventing text occlusion)
+          gl_PointSize = (1.1 + aRandom.x * 1.4) * (8.0 / -mvPosition.z);
         }
       `,
       fragmentShader: `
@@ -210,9 +210,9 @@ const HolographicFace = ({ scrollYProgress }) => {
         uniform float uTime;
         
         void main() {
-          // Render each particle as a soft, beautifully glowing neon circle
+          // Render each particle as a soft, beautifully glowing fine neon circle
           float distToCenter = length(gl_PointCoord - vec2(0.5));
-          float glowAlpha = smoothstep(0.5, 0.05, distToCenter) * 0.75;
+          float glowAlpha = smoothstep(0.5, 0.05, distToCenter) * 0.42;
           if (glowAlpha < 0.01) discard;
           
           // Harmonic gradient blend: Neon Indigo/Violet (#8b5cf6) to Vibrant Cyan (#06b6d4)
