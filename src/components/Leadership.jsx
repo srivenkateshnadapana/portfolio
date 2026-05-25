@@ -10,7 +10,7 @@ const Leadership = () => {
         className="flex items-center gap-4 mb-16"
       >
         <span className="text-[#34d399] text-sm tracking-[0.3em] uppercase font-light">
-          05 / Leadership
+          05 / Impact
         </span>
         <div className="flex-1 h-px bg-white/10"></div>
       </motion.div>
@@ -21,37 +21,42 @@ const Leadership = () => {
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight"
       >
-        Community &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#3b82f6]">Impact</span>
+        Community &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#3b82f6]">Mentorship</span>
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           {
-            role: 'Organiser & Lead',
-            org: 'GDG on Campus, GDSC-ACET',
-            date: 'Aug 2023 – July 2025',
+            role: 'Google I/O 2024',
+            org: 'Digital Registrant & Community Participant',
+            date: 'April 2024',
             points: [
-              'Established and led GDG chapter, building a community of 5,000+ members.',
-              'Organized GDG DevFest Chennai, Vizag, and Hyderabad, engaging over 2,500 participants.'
+              'Active community participant, engaging with the latest Google developer announcements and ecosystems.'
             ]
           },
           {
-            role: 'Head & Board Member',
-            org: 'Entrepreneurship Development Cell (EDC) & Student Activity Council (SAC)',
-            date: '',
-            points: []
+            role: 'Robotics Educator',
+            org: 'Cambridge IGCSE & ICSE Programs',
+            date: 'Weekly Cohorts',
+            points: [
+              'Trained over 100 students weekly in robotics fundamentals, embedded IoT, and practical technical applications.'
+            ]
           },
           {
-            role: 'Campus Ambassador',
-            org: 'E-Cell, IIT Bombay',
-            date: '',
-            points: []
+            role: 'Mentorship Core',
+            org: 'B.Sc Computer Science Labs',
+            date: 'March 2026',
+            points: [
+              'Conducted specialized hands-on logic development and project building for data analytics internships.'
+            ]
           },
           {
-            role: 'Speaker',
-            org: 'Technology & Startup Events across India',
-            date: '',
-            points: ['Speaker on innovation and entrepreneurship at numerous events.']
+            role: 'Tech Hackathons Leader',
+            org: 'DevOps & Cloud Infrastructure',
+            date: 'Ongoing',
+            points: [
+              'Designed and demonstrated production-ready CI/CD pipelines deploying frontend and backend systems seamlessly.'
+            ]
           }
         ].map((item, index) => (
           <motion.div
@@ -84,10 +89,10 @@ const Leadership = () => {
 
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
         {[
-          { num: '5,000+', label: 'GDG Members' },
-          { num: '2,500+', label: 'DevFest Participants' },
-          { num: '2,000+', label: 'Students Mentored' },
-          { num: '5+', label: 'Major Events Organized' }
+          { num: '35+', label: 'Monthly Google Cloud Credits Earned' },
+          { num: '100+', label: 'Cambridge Students Trained Weekly' },
+          { num: '4+', label: 'Cloud Architecture Stacks Mastered' },
+          { num: '3+', label: 'Active Industry Validations (2025-26)' }
         ].map((stat, idx) => (
           <motion.div
             key={idx}

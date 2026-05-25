@@ -12,7 +12,7 @@ const Achievements = () => {
         className="flex items-center gap-4 mb-16"
       >
         <span className="text-[#a855f7] text-sm tracking-[0.3em] uppercase font-light">
-          04 / Achievements
+          04 / Industry Validation
         </span>
         <div className="flex-1 h-px bg-white/10"></div>
       </motion.div>
@@ -23,14 +23,14 @@ const Achievements = () => {
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight"
       >
-        Milestones &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a855f7] to-[#ec4899]">Recognition</span>
+        In the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a855f7] to-[#ec4899]">Spotlight</span>
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         {[
-          { icon: '🏆', title: 'Top 10 Startups', desc: 'Recognised among the Top 10 Startups at Startup Mahakumbh out of 200+ startups and 1000+ colleges.' },
-          { icon: '🌿', title: 'India Book of Records', desc: 'Spearheaded the creation of India\'s tallest aeroponic tower.' },
-          { icon: '🚀', title: 'Be the Change Community', desc: 'Founder fostering growth for 2,000+ students from tier-3 colleges.' }
+          { icon: '🎯', title: 'K21Academy (GoogleAI SME)', desc: 'Approached directly by Atul Kumar (CEO) regarding technical alignment for Google AI curriculum paths.' },
+          { icon: '🚀', title: 'NxtWave Disruptive Tech', desc: 'Shortlisted & personally invited for high-impact technical instructor tracks (GenAI and MERN).' },
+          { icon: '🌐', title: 'Google Cloud Tech Series', desc: 'Personally invited to Cloud Tech Series (AI in Action & OnBoard Edition).' }
         ].map((item, index) => (
           <motion.div
             key={index}
@@ -50,13 +50,13 @@ const Achievements = () => {
       </div>
 
       <div>
-        <p className="text-white/40 text-sm tracking-widest uppercase mb-6">Certifications</p>
+        <p className="text-white/40 text-sm tracking-widest uppercase mb-6">Badges &amp; Certifications</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {[
-            'The Complete 2023 Web Development Bootcamp | Udemy',
-            'Professional Certificate in Career Coaching | MTF Institute',
-            'Prompt Engineering | LinkedIn Learning',
-            'AI for Everyone | DeepLearning.AI'
+            'Google Cloud Innovator | Legacy Community Badge',
+            'Women Techmakers Program | Accepted Member',
+            'Cybrary Professional Development | Security & Infrastructure',
+            'Qualcomm Academy Certified | Professional Technical Modules'
           ].map((cert, index) => (
             <motion.div
               key={index}

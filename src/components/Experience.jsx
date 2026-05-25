@@ -3,38 +3,46 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
-      role: 'Associate Developer',
-      company: 'Adhoc Network Tech.',
-      date: 'Dec 2025 – May 2026',
-      location: 'Vizag, A.P',
+      role: 'Senior Technical Trainer',
+      company: 'Adhoc Network Tech',
+      date: 'July 2025 – Jan 2026',
+      location: 'Onsite / Remote',
       color: '#6366f1',
       details: [
-        'Full Stack Developer using the MERN Stack for developing scalable web applications.',
-        'Developed and maintained LMS portals, handling both front-end and back-end functionalities.',
-        'Contributed to deployment, debugging, and multiple company projects with the core development team.'
+        'Delivered specialized technical modules spanning cloud infrastructure, advanced systems engineering, and automated technical operations.',
+        'Translated high-level software/hardware architectures into structured curriculum for professional engineering fast-tracks.'
       ]
     },
     {
-      role: 'Software Engineer Intern',
-      company: 'Ford Global Technology & Business Center',
-      date: 'Jun 2025 – July 2025 (55 days)',
-      location: 'Chennai, TN',
+      role: 'Robotics STEM Trainer & Educator',
+      company: 'Robochamps / International School Shaikpet',
+      date: 'June 2024 – Feb 2025',
+      location: 'Hyderabad',
       color: '#3b82f6',
       details: [
-        'Collaborated with LL4 leaders to design and integrate ADK agents and AI components into Ford Web Studio and Star Tool.',
-        'Developed AI-powered features using Python and Java with prompt engineering, achieving a 30% increase in efficiency.',
-        'Contributed to front-end development using React, JavaScript, AngularJS, HTML, and CSS in Star Tool.'
+        'Conducted weekly hardware labs and theory sessions for over 100 Cambridge IGCSE and ICSE students in robotics fundamentals.',
+        'Mentored student cohorts in designing and programming functional mobile robotics and embedded IoT applications.'
       ]
     },
     {
-      role: 'Front-End Developer Intern',
-      company: 'Hydro Tribe Private Limited',
-      date: 'May 2024 – July 2024',
-      location: 'Kakinada, AP',
+      role: 'Data Analytics Internship Mentor',
+      company: 'Aditya Degree College',
+      date: 'March 2026',
+      location: 'India',
       color: '#10b981',
       details: [
-        'Designed and developed the company\'s official website using React.js, improving UI performance by 25%.',
-        'Simulated and visualised sustainable aeroponic farming solutions, supporting product innovation.'
+        'Conducted specialized hands-on training for B.Sc Computer Science students, focusing on technical upskilling, logic development, and project building.'
+      ]
+    },
+    {
+      role: 'Technical Intern',
+      company: 'CodSoft & IES / APSSDC',
+      date: 'Aug 2022 – July 2025',
+      location: 'Remote',
+      color: '#f59e0b',
+      details: [
+        'Selected for the CodSoft Internship Program (July Batches B37 & B39).',
+        'Completed International Internship on Emerging Technologies collaborating with IES & APSSDC.'
       ]
     }
   ];

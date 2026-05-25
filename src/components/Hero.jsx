@@ -29,7 +29,7 @@ const Hero = () => {
           style={{ opacity: opacity1, y: y1 }}
         >
           <p className="text-sm tracking-[0.35em] text-[#a3e635] uppercase mb-5 font-light">
-            Creative Technologist
+            Building the Future of Motion
           </p>
           <h1 className="text-5xl md:text-8xl font-bold text-white leading-none tracking-tight">
             Sri Venkatesh<br />
@@ -53,7 +53,7 @@ const Hero = () => {
             I build intelligent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">systems.</span>
           </h2>
           <p className="mt-5 text-white/50 text-lg font-light max-w-md">
-            Industrial Automation · Cloud Infrastructure · Robotics
+            Industrial Automation · Cloud Infrastructure · AI
           </p>
         </motion.div>
 
@@ -68,7 +68,7 @@ const Hero = () => {
             Bridging <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">hardware</span> &amp; software.
           </h2>
           <p className="mt-5 text-white/50 text-lg font-light max-w-md">
-            Ford · Adhoc Network · Be the Change
+            From complex software systems to physical hardware deployed at scale.
           </p>
         </motion.div>
 

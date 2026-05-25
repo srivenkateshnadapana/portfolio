@@ -29,16 +29,16 @@ const About = () => {
           </div>
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8">
-              A developer who <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7] bg-300% animate-gradient">thinks</span> beyond code.
+              A developer who <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7] bg-300% animate-gradient">bridges</span> hardware and software.
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-6">
-              I'm Sri Venkatesh Nadapana, a Robotics Engineer, Cloud Architecture Specialist, and Educator pursuing B.Tech at Aditya College of Engineering &amp; Technology (2022–2026).
+              I'm Sri Venkatesh Nadapana, a Robotics Engineer and Senior Technical Trainer. I specialize in industrial automation, cloud infrastructure, and mentoring the next generation of engineers to build, deploy, and scale intelligent systems.
             </p>
             <p className="text-white/60 text-lg leading-relaxed mb-6">
-              I've worked across the spectrum — from building cloud-native automation portals at startups to integrating AI agents at Ford Global Technology. I founded the Be the Change community impacting 2,000+ students and led GDG on Campus.
+              I have delivered specialized technical modules spanning cloud infrastructure and advanced systems engineering, alongside hands-on hardware training for hundreds of students in robotics fundamentals and embedded IoT.
             </p>
             <p className="text-white/60 text-lg leading-relaxed mb-6">
-              I thrive at the intersection of engineering, system design, and education.
+              I thrive at the intersection of complex software architecture, real-time control systems, and impactful technical education.
             </p>
           </div>
         </motion.div>
@@ -61,12 +61,13 @@ const About = () => {
               <div className="text-center">
                 <p className="text-white/50 text-sm mb-2">Core Stack</p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">C / C++</span>
-                   <span className="px-3 py-1 bg-[#8b5cf6]/20 text-[#8b5cf6] rounded-full text-xs">Python</span>
-                   <span className="px-3 py-1 bg-[#a855f7]/20 text-[#a855f7] rounded-full text-xs">Docker</span>
-                   <span className="px-3 py-1 bg-[#ec4899]/20 text-[#ec4899] rounded-full text-xs">AWS</span>
-                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">Jenkins</span>
-                   <span className="px-3 py-1 bg-[#10b981]/20 text-[#10b981] rounded-full text-xs">Terraform</span>
+                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">ROS</span>
+                   <span className="px-3 py-1 bg-[#8b5cf6]/20 text-[#8b5cf6] rounded-full text-xs">PLC</span>
+                   <span className="px-3 py-1 bg-[#a855f7]/20 text-[#a855f7] rounded-full text-xs">AWS / GCP</span>
+                   <span className="px-3 py-1 bg-[#ec4899]/20 text-[#ec4899] rounded-full text-xs">Python</span>
+                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">GenAI</span>
+                   <span className="px-3 py-1 bg-[#10b981]/20 text-[#10b981] rounded-full text-xs">Linux</span>
+                   <span className="px-3 py-1 bg-[#f59e0b]/20 text-[#f59e0b] rounded-full text-xs">VMware</span>
                 </div>
               </div>
             </div>
@@ -94,10 +95,10 @@ const About = () => {
             </div>
             <div className="space-y-4">
               <div>
-                <h4 className="text-white font-medium text-base">Aditya College of Engineering &amp; Technology</h4>
-                <p className="text-white/60 text-sm mt-1">Bachelor of Technology (B.Tech)</p>
+                <h4 className="text-white font-medium text-base">Swarnandhra College of Engineering and Technology</h4>
+                <p className="text-white/60 text-sm mt-1">Bachelor of Technology (B.Tech) in Robotics Engineering</p>
                 <div className="flex items-center gap-2 mt-2 text-xs text-white/40">
-                  <span>Aug 2022 – April 2026</span><span>•</span><span>Surampalem, A.P</span>
+                  <span>2020 – 2024</span><span>•</span><span>A.P, India</span>
                 </div>
               </div>
             </div>
@@ -119,12 +120,12 @@ const About = () => {
                 </svg>
               </div>
               <div>
-                <p className="text-[#a855f7] text-xs tracking-widest uppercase">Soft Skills</p>
-                <h3 className="text-white font-semibold">Core Competencies</h3>
+                <p className="text-[#a855f7] text-xs tracking-widest uppercase">Core Capabilities</p>
+                <h3 className="text-white font-semibold">Strengths</h3>
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {['Leadership', 'Communication', 'Teamwork & Collaboration', 'Problem-Solving', 'Mentorship'].map((skill, i) => (
+              {['Curriculum Design', 'Technical Mentorship', 'System Architecture', 'Problem-Solving', 'Project-Based Learning'].map((skill, i) => (
                 <div key={i} className="flex items-center gap-3 p-4 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300">
                   <div className="p-2 rounded-xl bg-white/5">
                     <div className="w-2 h-2 rounded-full bg-[#6366f1]"></div>

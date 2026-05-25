@@ -4,39 +4,39 @@ const Projects = () => {
   const projects = [
     {
       id: "01",
-      tag: "Robotics & Automation",
-      title: "Warehouse Rover",
-      desc: "An autonomous warehouse navigation rover built using ROS and LiDAR. Includes obstacle avoidance and dynamic path planning.",
-      bullet: "✦ Achieved 95% navigation accuracy in dynamic environments.",
+      tag: "Full Stack & EdTech",
+      title: "Next-Gen IT LMS Portal",
+      desc: "Designed and built a scalable LMS platform using a microservices approach to deliver curriculum, track progress, and integrate Blockchain-based certification verification.",
+      bullet: "✦ Seamlessly supports high concurrency during live sessions.",
       color: "#6366f1",
-      tech: ["C++", "ROS", "Python", "Raspberry Pi"]
+      tech: ["MERN Stack", "Supabase", "Vercel", "Web3 Concepts"]
     },
     {
       id: "02",
-      tag: "Cloud Infrastructure",
-      title: "AutoDeploy Nexus",
-      desc: "A scalable CI/CD pipeline infrastructure deploying containerized applications across multi-cloud environments.",
-      bullet: "✦ Reduced deployment times by 40% across 5 projects.",
+      tag: "IoT & Cloud Architecture",
+      title: "Cloud Smart Home Automation",
+      desc: "An end-to-end smart automation framework capable of remote monitoring and appliance control with secure, low-latency telemetry.",
+      bullet: "✦ Cloud-integrated real-time web dashboards.",
       color: "#10b981",
-      tech: ["Docker", "Kubernetes", "AWS", "Jenkins"]
+      tech: ["IoT Microcontrollers", "AWS/GCP IoT Core", "Security Protocols"]
     },
     {
       id: "03",
-      tag: "Educational Tool",
-      title: "VirtuLab Environment",
-      desc: "A simulated virtual laboratory for robotics students to test physics and kinematics algorithms before hardware deployment.",
-      bullet: "✦ Used by 200+ students for practical learning.",
+      tag: "Machine Learning & Analytics",
+      title: "Customer Churn Prediction Engine",
+      desc: "Developed a predictive analytics pipeline to identify high-risk customer drop-offs through rigorous EDA and classification modeling.",
+      bullet: "✦ Optimized precision and recall scores for business insights.",
       color: "#f59e0b",
-      tech: ["Python", "PyBullet", "React", "Node.js"]
+      tech: ["Python", "Pandas", "Scikit-Learn", "Jupyter"]
     },
     {
       id: "04",
-      tag: "AI Integration at Ford",
-      title: "Ford Web Studio AI",
-      desc: "Integrated AI components and ADK agents into Ford's internal development platforms, enhancing automation efficiency.",
-      bullet: "✦ 30% increase in development efficiency.",
+      tag: "FinTech / AI",
+      title: "Financial Analytics Framework",
+      desc: "An agile, AI-driven financial analytics module utilizing low-code ML wrappers to build forecasting models directly on cloud spreadsheets.",
+      bullet: "✦ Rapid turnaround data tracking for fast-paced environments.",
       color: "#3b82f6",
-      tech: ["Python", "Java", "ADK Agents", "React"]
+      tech: ["SimpleML", "Quadratic AI", "Google Sheets"]
     }
   ];
 
