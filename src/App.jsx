@@ -31,7 +31,7 @@ function App() {
     <div className="__variable_f367f3 relative overflow-hidden min-h-screen bg-[#0a0a0a]">
       {/* Global Background Mouse Glow Tracker */}
       <motion.div
-        className="pointer-events-none fixed w-[600px] h-[600px] rounded-full bg-radial-glow blur-[80px] z-0 opacity-50 mix-blend-screen"
+        className="pointer-events-none fixed w-[600px] h-[600px] rounded-full bg-radial-glow blur-[80px] z-0 opacity-75 mix-blend-screen"
         style={{
           x: glowX,
           y: glowY,
