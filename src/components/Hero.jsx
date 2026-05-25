@@ -6,21 +6,18 @@ const Hero = () => {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   
-  // Track scroll timeline over the entire 300vh section to drive the 3D canvas
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
+  // Track scroll progress dynamically relative to global window scroll (resolves ref mounting/stuck context bugs)
+  const scrollYProgress = useTransform(scrollY, [0, 1600], [0, 1]);
   
-  // Replicating scroll-linked opacity and transform from reference site using scrollYProgress (resolves dead zones)
-  const y1 = useTransform(scrollYProgress, [0, 0.3], [0, -80]);
-  const opacity1 = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  // Replicating scroll-linked opacity and transform from reference site using global scrollY
+  const y1 = useTransform(scrollY, [0, 600], [0, -100]);
+  const opacity1 = useTransform(scrollY, [0, 450], [1, 0]);
 
-  const y2 = useTransform(scrollYProgress, [0.3, 0.48, 0.65], [60, 0, -60]);
-  const opacity2 = useTransform(scrollYProgress, [0.3, 0.45, 0.65], [0, 1, 0]);
+  const y2 = useTransform(scrollY, [400, 800, 1200], [80, 0, -80]);
+  const opacity2 = useTransform(scrollY, [400, 600, 1000, 1200], [0, 1, 1, 0]);
 
-  const y3 = useTransform(scrollYProgress, [0.65, 0.8, 0.95], [60, 0, -60]);
-  const opacity3 = useTransform(scrollYProgress, [0.65, 0.8, 0.95], [0, 1, 0]);
+  const y3 = useTransform(scrollY, [1100, 1500, 2000], [80, 0, -80]);
+  const opacity3 = useTransform(scrollY, [1100, 1300, 1800, 2000], [0, 1, 1, 0]);
 
   // Mouse Parallax for 3D Image
   const mouseX = useMotionValue(0);
