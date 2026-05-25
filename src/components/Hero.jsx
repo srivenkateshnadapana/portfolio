@@ -48,51 +48,59 @@ const Hero = () => {
     <section ref={containerRef} className="relative" style={{ height: '500vh' }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0a0a0a]">
         
+        {/* Glowing Background Nebula Trails (Replicated via CSS gradients) */}
+        <div className="absolute inset-0 z-0 opacity-30 mix-blend-screen pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gradient-to-r from-[#f59e0b] to-transparent rounded-[100%] blur-[120px] rotate-[-15deg] animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gradient-to-r from-transparent to-[#8b5cf6] rounded-[100%] blur-[120px] rotate-[15deg] animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
         {/* 3D Holographic Neural Network Grid Layer */}
-        <div className="absolute inset-0 z-0 w-full h-full pointer-events-none select-none">
+        <div className="absolute inset-0 z-10 w-full h-full pointer-events-none select-none">
           <HolographicFace scrollYProgress={scrollYProgress} />
         </div>
 
         {/* Premium Vignette Overlay */}
         <div 
-          className="absolute inset-0 pointer-events-none z-[5]" 
+          className="absolute inset-0 pointer-events-none z-[15]" 
           style={{ background: 'radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.75) 100%)' }}
         />
 
+        {/* Slide 1: Title Card */}
         <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10 pointer-events-none mix-blend-normal"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 pointer-events-none mix-blend-normal"
           style={{ opacity: opacity1, y: y1 }}
         >
-          <p className="text-sm tracking-[0.4em] text-[#10b981] uppercase mb-4 font-semibold z-20">
+          <p className="text-sm tracking-[0.35em] text-[#a3e635] uppercase mb-5 font-light">
             CREATIVE TECHNOLOGIST
           </p>
-          <h1 className="text-6xl md:text-[8rem] font-black leading-[0.85] tracking-tighter z-20 mix-blend-screen">
-            <span className="text-white block">Sri Venkatesh</span>
-            <span className="text-[#a855f7] block">Nadapana</span>
+          <h1 className="text-5xl md:text-8xl font-bold text-white leading-none tracking-tight">
+            Sri Venkatesh<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">Nadapana</span>
           </h1>
-          <p className="mt-8 text-xl md:text-2xl text-white/40 font-light z-20">
+          <p className="mt-6 text-lg md:text-2xl text-white/55 font-light">
             Robotics Engineer · AI Integration · Creative Front-End
           </p>
         </motion.div>
  
+        {/* Slide 2: What I Do */}
         <motion.div
-          className="absolute inset-0 flex flex-col items-start justify-center px-10 md:px-24 z-10 pointer-events-none"
+          className="absolute inset-0 flex flex-col items-start justify-center px-10 md:px-24 z-20 pointer-events-none"
           style={{ opacity: opacity2, y: y2 }}
         >
-          <p className="text-xs tracking-[0.4em] text-[#6366f1] uppercase mb-3 font-semibold">
+          <p className="text-xs tracking-[0.35em] text-[#6366f1] uppercase mb-3 font-light">
             WHAT I DO
           </p>
-          <h2 className="text-5xl md:text-8xl font-bold leading-[1] max-w-3xl">
-            <span className="text-white/80 block">I build digital</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1] block">experiences.</span>
+          <h2 className="text-4xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
+            I build digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">experiences.</span>
           </h2>
-          <p className="mt-6 text-white/50 text-lg font-light max-w-md">
+          <p className="mt-5 text-white/50 text-lg font-light max-w-md">
             MERN Stack · Cloud Infrastructure · AI
           </p>
         </motion.div>
 
+        {/* Slide 3: Philosophy */}
         <motion.div
-          className="absolute inset-0 flex flex-col items-end justify-center px-10 md:px-24 z-10 pointer-events-none text-right"
+          className="absolute inset-0 flex flex-col items-end justify-center px-10 md:px-24 z-20 pointer-events-none text-right"
           style={{ opacity: opacity3, y: y3 }}
         >
           <p className="text-xs tracking-[0.35em] text-[#f59e0b] uppercase mb-3 font-light">
@@ -106,7 +114,7 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 pointer-events-none">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 pointer-events-none">
           <span className="text-white/40 text-[11px] tracking-[0.3em] uppercase">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent animate-pulse"></div>
         </div>
