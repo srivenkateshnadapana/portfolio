@@ -60,13 +60,9 @@ const Hero = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gradient-to-r from-transparent to-[#8b5cf6] rounded-[100%] blur-[80px] rotate-[15deg] animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
-        {/* 3D Holographic Particle Face Layer */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-          <div className="w-full max-w-[900px] h-[85vh] absolute bottom-0 select-none">
-            <HolographicFace scrollYProgress={scrollYProgress} />
-          </div>
-          {/* Gradient fade at the bottom to blend into the next section */}
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent z-20 pointer-events-none"></div>
+        {/* 3D Holographic Neural Network Grid Layer */}
+        <div className="absolute inset-0 z-10 w-full h-full pointer-events-none select-none">
+          <HolographicFace scrollYProgress={scrollYProgress} />
         </div>
 
         <motion.div
