@@ -25,7 +25,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="lg:col-span-2"
+          className="lg:col-span-2 h-full flex flex-col"
         >
           <GlowCard 
             glowColor="#6366f1"
@@ -58,7 +58,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, delay: 0.1 }}
-          className="lg:col-span-1"
+          className="lg:col-span-1 h-full flex flex-col"
         >
           <GlowCard 
             glowColor="#6366f1"
@@ -84,7 +84,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, delay: 0.2 }}
-          className="lg:col-span-1"
+          className="lg:col-span-1 h-full flex flex-col"
         >
           <GlowCard 
             glowColor="#6366f1"
@@ -125,7 +125,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, delay: 0.3 }}
-          className="lg:col-span-2"
+          className="lg:col-span-2 h-full flex flex-col"
         >
           <GlowCard 
             glowColor="#a855f7"
