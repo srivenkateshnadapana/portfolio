@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Terminal, Cpu, LineChart, PieChart } from 'lucide-react';
+import { Terminal, Cpu, LineChart, PieChart, ShieldCheck, Leaf } from 'lucide-react';
 import GlowCard from './GlowCard';
 
 
@@ -7,26 +7,46 @@ const Projects = () => {
   const projects = [
     {
       id: "01",
-      tag: "Full Stack & EdTech",
-      title: "Next-Gen IT LMS Portal",
-      desc: "Designed and built a scalable LMS platform using a microservices approach to deliver curriculum, track progress, and integrate Blockchain-based certification verification.",
-      bullet: "Seamlessly supports high concurrency during live sessions.",
-      icon: Terminal,
+      tag: "Healthcare Tech & NFC",
+      title: "Hridhaya",
+      desc: "A digital healthcare solution leveraging NFC-based technology to improve healthcare accessibility and patient data management.",
+      bullet: "Secured INR 30,000 funding from the Swarnandhra RDC Cell.",
+      icon: ShieldCheck,
       color: "#6366f1",
-      tech: ["MERN Stack", "Supabase", "Vercel", "Web3 Concepts"]
+      tech: ["React", "Figma", "NFC Technology", "Systems Architecture"]
     },
     {
       id: "02",
-      tag: "IoT & Cloud Architecture",
-      title: "Cloud Smart Home Automation",
-      desc: "Developed a fully integrated IoT solution using ESP32 microcontrollers and the Blynk platform, featuring real-time monitoring for hazards and remote control via MQTT.",
-      bullet: "Built custom mobile interfaces with automated water management.",
-      icon: Cpu,
+      tag: "Sustainable AgTech",
+      title: "Aeroponic Farm Platform",
+      desc: "Developed official platforms for aeroponic farming, showcasing industrial automation and sustainable agricultural practices.",
+      bullet: "Tallest aeroponic tower recorded in India Book of Records.",
+      icon: Leaf,
       color: "#10b981",
-      tech: ["ESP32", "Blynk", "MQTT", "AWS/GCP IoT Core"]
+      tech: ["React.js", "Industrial Automation", "Team Project"]
     },
     {
       id: "03",
+      tag: "Full Stack & EdTech",
+      title: "Next-Gen IT LMS Portal",
+      desc: "Designed and built a scalable LMS platform using a microservices approach to deliver curriculum, track progress, and verify certificates.",
+      bullet: "Seamlessly supports high concurrency during live sessions.",
+      icon: Terminal,
+      color: "#a855f7",
+      tech: ["MERN Stack", "Supabase", "Vercel", "Web3 Concepts"]
+    },
+    {
+      id: "04",
+      tag: "IoT & Cloud Architecture",
+      title: "Cloud Smart Home Automation",
+      desc: "Developed a fully integrated IoT solution using ESP32 microcontrollers and the Blynk platform, featuring hazard alerts and MQTT.",
+      bullet: "Built custom mobile interfaces with automated water management.",
+      icon: Cpu,
+      color: "#3b82f6",
+      tech: ["ESP32", "Blynk", "MQTT", "AWS/GCP IoT Core"]
+    },
+    {
+      id: "05",
       tag: "Machine Learning & Analytics",
       title: "Customer Churn Prediction Engine",
       desc: "Developed a predictive analytics pipeline to identify high-risk customer drop-offs through rigorous EDA and classification modeling.",
@@ -36,13 +56,13 @@ const Projects = () => {
       tech: ["Python", "Pandas", "Scikit-Learn", "Jupyter"]
     },
     {
-      id: "04",
+      id: "06",
       tag: "FinTech / AI",
       title: "Financial Analytics Framework",
       desc: "An agile, AI-driven financial analytics module utilizing low-code ML wrappers to build forecasting models directly on cloud spreadsheets.",
       bullet: "Rapid turnaround data tracking for fast-paced environments.",
       icon: PieChart,
-      color: "#3b82f6",
+      color: "#ec4899",
       tech: ["SimpleML", "Quadratic AI", "Google Sheets"]
     }
   ];

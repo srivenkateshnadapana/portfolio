@@ -6,6 +6,28 @@ import GlowCard from './GlowCard';
 const Experience = () => {
   const experiences = [
     {
+      role: 'Data Analytics Internship Mentor',
+      company: 'Aditya Degree College',
+      date: 'March 2026',
+      location: 'India',
+      color: '#10b981',
+      details: [
+        'Conducted specialized hands-on training for B.Sc Computer Science students, focusing on technical upskilling, logic development, and project building.'
+      ]
+    },
+    {
+      role: 'Associate Developer',
+      company: 'Adhoc Network Tech',
+      date: 'Dec 2025 – May 2026',
+      location: 'Vizag, A.P',
+      color: '#a855f7',
+      details: [
+        'Full Stack Developer using the MERN Stack for developing scalable web applications.',
+        'Developed and maintained LMS portals, handling both front-end and back-end functionalities.',
+        'Contributed to deployment, debugging, and multiple company projects with the core development team.'
+      ]
+    },
+    {
       role: 'Senior Technical Trainer',
       company: 'Adhoc Network Tech',
       date: 'Aug 2025 – Present',
@@ -17,24 +39,37 @@ const Experience = () => {
       ]
     },
     {
+      role: 'Software Engineer Intern',
+      company: 'Ford Global Technology & Business Center',
+      date: 'Jun 2025 – July 2025 (55 days)',
+      location: 'Chennai, TN',
+      color: '#3b82f6',
+      details: [
+        'Collaborated with LL4 leaders to design and integrate ADK agents and AI components into Ford Web Studio and Star Tool.',
+        'Developed AI-powered features using Python and Java with prompt engineering, achieving a 30% increase in efficiency.',
+        'Contributed to front-end development using React, JavaScript, AngularJS, HTML, and CSS in Star Tool.'
+      ]
+    },
+    {
       role: 'Robotics STEM Trainer & Educator',
       company: 'Robochamps / International School Shaikpet',
       date: 'June 2024 – Feb 2025',
       location: 'Hyderabad',
-      color: '#3b82f6',
+      color: '#ec4899',
       details: [
         'Conducted weekly hardware and theory sessions for over 100 Cambridge IGCSE and ICSE students in robotics fundamentals.',
         'Mentored student cohorts in designing and programming functional mobile robotics and embedded IoT applications.'
       ]
     },
     {
-      role: 'Data Analytics Internship Mentor',
-      company: 'Aditya Degree College',
-      date: 'March 2026',
-      location: 'India',
+      role: 'Front-End Developer Intern',
+      company: 'Hydro Tribe Private Limited',
+      date: 'May 2024 – July 2024',
+      location: 'Kakinada, AP',
       color: '#10b981',
       details: [
-        'Conducted specialized hands-on training for B.Sc Computer Science students, focusing on technical upskilling, logic development, and project building.'
+        'Designed and developed the company\'s official website using React.js, improving UI performance by 25%.',
+        'Simulated and visualised sustainable aeroponic farming solutions, supporting product innovation.'
       ]
     },
     {
