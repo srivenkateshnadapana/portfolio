@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Terminal, Cpu, LineChart, PieChart } from 'lucide-react';
+import GlowCard from './GlowCard';
+
 
 const Projects = () => {
   const projects = [
@@ -75,58 +77,55 @@ const Projects = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, delay: index * 0.1 }}
-            className="group relative p-8 rounded-3xl border border-white/10 overflow-hidden cursor-pointer"
-            style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-            }}
           >
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
+            <GlowCard
+              glowColor={project.color}
+              className="p-8 rounded-3xl border border-white/10 cursor-pointer h-full"
               style={{
-                boxShadow: `inset 0 0 60px ${project.color}20`,
-                border: `1px solid ${project.color}40`,
+                background: 'rgba(255, 255, 255, 0.03)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
               }}
-            ></div>
-            <div
-              className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl"
-              style={{ background: `linear-gradient(to right, ${project.color}, ${project.color}60)` }}
-            ></div>
-            <span
-              className="text-6xl font-bold opacity-10 absolute top-4 right-6 select-none"
-              style={{ color: project.color }}
             >
-              {project.id}
-            </span>
-            
-            <div className="relative z-10">
-              <p className="text-xs tracking-widest uppercase mb-2" style={{ color: project.color }}>
-                {project.tag}
-              </p>
-              <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6">
-                {project.desc}
-              </p>
               <div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs mb-6"
-                style={{
-                  background: `${project.color}15`,
-                  border: `1px solid ${project.color}30`,
-                  color: project.color,
-                }}
+                className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl z-20"
+                style={{ background: `linear-gradient(to right, ${project.color}, ${project.color}60)` }}
+              ></div>
+              <span
+                className="text-6xl font-bold opacity-10 absolute top-4 right-6 select-none z-0"
+                style={{ color: project.color }}
               >
-                <project.icon size={13} className="shrink-0" />
-                <span>{project.bullet}</span>
+                {project.id}
+              </span>
+              
+              <div className="relative z-10">
+                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: project.color }}>
+                  {project.tag}
+                </p>
+                <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  {project.desc}
+                </p>
+                <div
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs mb-6"
+                  style={{
+                    background: `${project.color}15`,
+                    border: `1px solid ${project.color}30`,
+                    color: project.color,
+                  }}
+                >
+                  <project.icon size={13} className="shrink-0" />
+                  <span>{project.bullet}</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t, idx) => (
+                    <span key={idx} className="text-xs px-3 py-1 rounded-full border border-white/10 text-white/40">
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((t, idx) => (
-                  <span key={idx} className="text-xs px-3 py-1 rounded-full border border-white/10 text-white/40">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </GlowCard>
           </motion.div>
         ))}
       </div>

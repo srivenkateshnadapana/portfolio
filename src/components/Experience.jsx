@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Briefcase, ChevronRight } from 'lucide-react';
+import GlowCard from './GlowCard';
+
 
 const Experience = () => {
   const experiences = [
@@ -87,7 +89,15 @@ const Experience = () => {
                 className="absolute -left-8 md:-left-24 top-1 w-4 h-4 rounded-full border-2 border-[#0d0d0d] shadow-lg flex items-center justify-center"
                 style={{ background: exp.color, boxShadow: `0 0 12px ${exp.color}80` }}
               ></div>
-              <div className="group p-6 md:p-8 rounded-2xl border border-white/8 bg-white/4 hover:bg-white/8 transition-all duration-300 backdrop-blur-sm">
+              <GlowCard
+                glowColor={exp.color}
+                className="p-6 md:p-8 rounded-2xl border border-white/8"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                }}
+              >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                   <div className="flex items-start gap-3">
                     <div 
@@ -114,7 +124,7 @@ const Experience = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </GlowCard>
             </motion.div>
           ))}
 

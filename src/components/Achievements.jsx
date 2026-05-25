@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Award, Target, Zap, Cloud, ShieldCheck } from 'lucide-react';
+import GlowCard from './GlowCard';
+
 
 const Achievements = () => {
   return (
@@ -39,22 +41,30 @@ const Achievements = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, delay: index * 0.1 }}
-            className="group relative p-8 rounded-3xl border border-white/10 bg-white/3 backdrop-blur-sm text-center overflow-hidden flex flex-col justify-between"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-            <div className="relative z-10 flex flex-col items-center h-full">
-              <div 
-                className="mb-6 p-4 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 group-hover:scale-110"
-                style={{ 
-                  color: item.color,
-                  boxShadow: `0 0 20px ${item.color}15`
-                }}
-              >
-                <item.icon size={32} strokeWidth={1.5} />
+            <GlowCard
+              glowColor={item.color}
+              className="p-8 rounded-3xl border border-white/10 text-center flex flex-col justify-between h-full"
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+              }}
+            >
+              <div className="relative z-10 flex flex-col items-center h-full">
+                <div 
+                  className="mb-6 p-4 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 group-hover:scale-110"
+                  style={{ 
+                    color: item.color,
+                    boxShadow: `0 0 20px ${item.color}15`
+                  }}
+                >
+                  <item.icon size={32} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
-            </div>
+            </GlowCard>
           </motion.div>
         ))}
       </div>
