@@ -47,7 +47,7 @@ const Leadership = () => {
           },
           {
             role: 'Mentorship Core',
-            org: 'B.Sc Computer Science Labs',
+            org: 'B.Sc Computer Science',
             date: 'March 2026',
             icon: Users,
             points: [

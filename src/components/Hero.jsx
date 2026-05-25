@@ -1,8 +1,16 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import HolographicFace from './HolographicFace';
 
 const Hero = () => {
+  const containerRef = useRef(null);
   const { scrollY } = useScroll();
+  
+  // Track scroll timeline over the entire 300vh section to drive the 3D canvas
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
   
   // Replicating scroll-linked opacity and transform from reference site
   const y1 = useTransform(scrollY, [0, 500], [0, -100]);
@@ -43,7 +51,7 @@ const Hero = () => {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative" style={{ height: '300vh' }}>
+    <section ref={containerRef} className="relative" style={{ height: '300vh' }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0a0a0a]">
         
         {/* Glowing Background Trails (Replicated via CSS gradients) */}
@@ -52,33 +60,13 @@ const Hero = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gradient-to-r from-transparent to-[#8b5cf6] rounded-[100%] blur-[80px] rotate-[15deg] animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
-        {/* Profile Image Layer */}
-        {/* Using the 3D generated image with floating & tilt animations */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[80vh] z-10 flex items-end justify-center pointer-events-none" style={{ perspective: '1000px' }}>
-          <motion.div 
-            className="w-full h-full relative flex justify-center items-end"
-            style={{ 
-              rotateX, 
-              rotateY, 
-              x: translateX, 
-              y: translateY,
-              transformStyle: "preserve-3d"
-            }}
-          >
-            <motion.img 
-              src="/profile.png" 
-              alt="Sri Venkatesh Nadapana" 
-              className="absolute bottom-0 h-[90%] object-cover object-bottom"
-              style={{ filter: 'drop-shadow(0px -20px 40px rgba(168, 85, 247, 0.2))' }}
-              animate={{ y: [0, -15, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              onError={(e) => {
-                e.target.style.display = 'none'; // hide if not found
-              }}
-            />
-            {/* Gradient fade at the bottom of the image to blend into the next section */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
-          </motion.div>
+        {/* 3D Holographic Particle Face Layer */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+          <div className="w-full max-w-[900px] h-[85vh] absolute bottom-0 select-none">
+            <HolographicFace scrollYProgress={scrollYProgress} />
+          </div>
+          {/* Gradient fade at the bottom to blend into the next section */}
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent z-20 pointer-events-none"></div>
         </div>
 
         <motion.div

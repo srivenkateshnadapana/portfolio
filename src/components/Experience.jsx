@@ -6,7 +6,7 @@ const Experience = () => {
     {
       role: 'Senior Technical Trainer',
       company: 'Adhoc Network Tech',
-      date: 'July 2025 – Jan 2026',
+      date: 'Aug 2025 – Present',
       location: 'Onsite / Remote',
       color: '#6366f1',
       details: [
@@ -21,7 +21,7 @@ const Experience = () => {
       location: 'Hyderabad',
       color: '#3b82f6',
       details: [
-        'Conducted weekly hardware labs and theory sessions for over 100 Cambridge IGCSE and ICSE students in robotics fundamentals.',
+        'Conducted weekly hardware and theory sessions for over 100 Cambridge IGCSE and ICSE students in robotics fundamentals.',
         'Mentored student cohorts in designing and programming functional mobile robotics and embedded IoT applications.'
       ]
     },
