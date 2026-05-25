@@ -244,7 +244,7 @@ const HolographicFace = ({ scrollYProgress }) => {
       if (linesGeometry) linesGeometry.dispose();
       if (linesMaterial) linesMaterial.dispose();
     };
-  }, [scrollYProgress]);
+  }, []);
 
   return (
     <div ref={containerRef} className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none">
