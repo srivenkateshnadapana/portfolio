@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { Mail } from 'lucide-react';
+import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -42,13 +44,14 @@ const Contact = () => {
           whileHover={{ scale: 1.05 }}
           viewport={{ once: true, delay: 0.2 }}
           href="mailto:nadapanasrivenkatesh1@gmail.com"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg mb-16 transition-all duration-300"
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg mb-16 transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.6)]"
           style={{
             background: 'linear-gradient(135deg, #6366f1, #a855f7)',
             boxShadow: '0 0 40px rgba(99, 102, 241, 0.4)'
           }}
         >
-          <span>✉</span> nadapanasrivenkatesh1@gmail.com
+          <Mail size={22} className="stroke-[2px]" />
+          <span>nadapanasrivenkatesh1@gmail.com</span>
         </motion.a>
         
         <motion.div 
@@ -61,28 +64,31 @@ const Contact = () => {
             href="https://linkedin.com/in/nadapanasrivenkatesh"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-[#3b82f6]/40 hover:bg-[#3b82f6]/5"
             style={{ color: '#3b82f6' }}
           >
-            LinkedIn
+            <FaLinkedin size={18} />
+            <span>LinkedIn</span>
           </a>
           <a
             href="https://github.com/nadapanasrivenkatesh"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-[#a5b4fc]/40 hover:bg-[#a5b4fc]/5"
             style={{ color: '#a5b4fc' }}
           >
-            GitHub
+            <FaGithub size={18} />
+            <span>GitHub</span>
           </a>
           <a
             href="https://wa.me/917013153753"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-[#34d399]/40 hover:bg-[#34d399]/5"
             style={{ color: '#34d399' }}
           >
-            WhatsApp
+            <FaWhatsapp size={18} />
+            <span>WhatsApp</span>
           </a>
         </motion.div>
       </div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Terminal, Cpu, LineChart, PieChart } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -7,7 +8,8 @@ const Projects = () => {
       tag: "Full Stack & EdTech",
       title: "Next-Gen IT LMS Portal",
       desc: "Designed and built a scalable LMS platform using a microservices approach to deliver curriculum, track progress, and integrate Blockchain-based certification verification.",
-      bullet: "✦ Seamlessly supports high concurrency during live sessions.",
+      bullet: "Seamlessly supports high concurrency during live sessions.",
+      icon: Terminal,
       color: "#6366f1",
       tech: ["MERN Stack", "Supabase", "Vercel", "Web3 Concepts"]
     },
@@ -16,7 +18,8 @@ const Projects = () => {
       tag: "IoT & Cloud Architecture",
       title: "Cloud Smart Home Automation",
       desc: "Developed a fully integrated IoT solution using ESP32 microcontrollers and the Blynk platform, featuring real-time monitoring for hazards and remote control via MQTT.",
-      bullet: "✦ Built custom mobile interfaces with automated water management.",
+      bullet: "Built custom mobile interfaces with automated water management.",
+      icon: Cpu,
       color: "#10b981",
       tech: ["ESP32", "Blynk", "MQTT", "AWS/GCP IoT Core"]
     },
@@ -25,7 +28,8 @@ const Projects = () => {
       tag: "Machine Learning & Analytics",
       title: "Customer Churn Prediction Engine",
       desc: "Developed a predictive analytics pipeline to identify high-risk customer drop-offs through rigorous EDA and classification modeling.",
-      bullet: "✦ Optimized precision and recall scores for business insights.",
+      bullet: "Optimized precision and recall scores for business insights.",
+      icon: LineChart,
       color: "#f59e0b",
       tech: ["Python", "Pandas", "Scikit-Learn", "Jupyter"]
     },
@@ -34,7 +38,8 @@ const Projects = () => {
       tag: "FinTech / AI",
       title: "Financial Analytics Framework",
       desc: "An agile, AI-driven financial analytics module utilizing low-code ML wrappers to build forecasting models directly on cloud spreadsheets.",
-      bullet: "✦ Rapid turnaround data tracking for fast-paced environments.",
+      bullet: "Rapid turnaround data tracking for fast-paced environments.",
+      icon: PieChart,
       color: "#3b82f6",
       tech: ["SimpleML", "Quadratic AI", "Google Sheets"]
     }
@@ -111,7 +116,8 @@ const Projects = () => {
                   color: project.color,
                 }}
               >
-                {project.bullet}
+                <project.icon size={13} className="shrink-0" />
+                <span>{project.bullet}</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t, idx) => (

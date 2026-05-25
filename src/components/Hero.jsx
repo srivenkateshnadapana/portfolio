@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { useEffect } from 'react';
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -13,6 +14,34 @@ const Hero = () => {
   const y3 = useTransform(scrollY, [800, 1300], [50, -50]);
   const opacity3 = useTransform(scrollY, [800, 1000, 1300], [0, 1, 0]);
 
+  // Mouse Parallax for 3D Image
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  // Smooth spring physics for mouse movement
+  const springConfig = { damping: 25, stiffness: 150 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+  
+  // Map mouse position to rotation and movement
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], [15, -15]);
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-15, 15]);
+  const translateX = useTransform(smoothX, [-0.5, 0.5], [-20, 20]);
+  const translateY = useTransform(smoothY, [-0.5, 0.5], [-20, 20]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      // Normalize mouse coordinates to [-0.5, 0.5]
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      mouseX.set(clientX / innerWidth - 0.5);
+      mouseY.set(clientY / innerHeight - 0.5);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
   return (
     <section className="relative" style={{ height: '300vh' }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0a0a0a]">
@@ -24,20 +53,32 @@ const Hero = () => {
         </div>
 
         {/* Profile Image Layer */}
-        {/* Replace /profile.png with your actual transparent portrait photo */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[80vh] z-10 flex items-end justify-center pointer-events-none">
-          <div className="w-full h-full relative">
-            <img 
+        {/* Using the 3D generated image with floating & tilt animations */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[80vh] z-10 flex items-end justify-center pointer-events-none" style={{ perspective: '1000px' }}>
+          <motion.div 
+            className="w-full h-full relative flex justify-center items-end"
+            style={{ 
+              rotateX, 
+              rotateY, 
+              x: translateX, 
+              y: translateY,
+              transformStyle: "preserve-3d"
+            }}
+          >
+            <motion.img 
               src="/profile.png" 
               alt="Sri Venkatesh Nadapana" 
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[90%] object-cover object-bottom opacity-90"
+              className="absolute bottom-0 h-[90%] object-cover object-bottom"
+              style={{ filter: 'drop-shadow(0px -20px 40px rgba(168, 85, 247, 0.2))' }}
+              animate={{ y: [0, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               onError={(e) => {
-                e.target.style.display = 'none'; // hide if not found, fallback to just text
+                e.target.style.display = 'none'; // hide if not found
               }}
             />
             {/* Gradient fade at the bottom of the image to blend into the next section */}
             <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
-          </div>
+          </motion.div>
         </div>
 
         <motion.div

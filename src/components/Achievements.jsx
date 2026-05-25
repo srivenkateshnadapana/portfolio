@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Award, Target, Zap, Cloud, ShieldCheck } from 'lucide-react';
 
 const Achievements = () => {
   return (
@@ -26,25 +27,33 @@ const Achievements = () => {
         In the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a855f7] to-[#ec4899]">Spotlight</span>
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
         {[
-          { icon: '🏆', title: 'Felicitation for Excellence', desc: 'Felicitated by Aditya Degree College, Bhimavaram for Excellence in Technical Mentorship.' },
-          { icon: '🎯', title: 'K21Academy (GoogleAI SME)', desc: 'Approached directly by Atul Kumar (CEO) regarding technical alignment for Google AI curriculum paths.' },
-          { icon: '🚀', title: 'NxtWave Disruptive Tech', desc: 'Shortlisted & personally invited for high-impact technical instructor tracks (GenAI and MERN).' },
-          { icon: '🌐', title: 'Google Cloud Tech Series', desc: 'Personally invited to Cloud Tech Series (AI in Action & OnBoard Edition).' }
+          { icon: Award, color: '#f59e0b', title: 'Felicitation for Excellence', desc: 'Felicitated by Aditya Degree College, Bhimavaram for Excellence in Technical Mentorship.' },
+          { icon: Target, color: '#a855f7', title: 'K21Academy (GoogleAI SME)', desc: 'Approached directly by Atul Kumar (CEO) regarding technical alignment for Google AI curriculum paths.' },
+          { icon: Zap, color: '#10b981', title: 'NxtWave Disruptive Tech', desc: 'Shortlisted & personally invited for high-impact technical instructor tracks (GenAI and MERN).' },
+          { icon: Cloud, color: '#3b82f6', title: 'Google Cloud Tech Series', desc: 'Personally invited to Cloud Tech Series (AI in Action & OnBoard Edition).' }
         ].map((item, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, delay: index * 0.1 }}
-            className="group relative p-8 rounded-3xl border border-white/10 bg-white/3 backdrop-blur-sm text-center overflow-hidden"
+            className="group relative p-8 rounded-3xl border border-white/10 bg-white/3 backdrop-blur-sm text-center overflow-hidden flex flex-col justify-between"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-            <div className="relative z-10">
-              <div className="text-5xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+            <div className="relative z-10 flex flex-col items-center h-full">
+              <div 
+                className="mb-6 p-4 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 group-hover:scale-110"
+                style={{ 
+                  color: item.color,
+                  boxShadow: `0 0 20px ${item.color}15`
+                }}
+              >
+                <item.icon size={32} strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
+              <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
             </div>
           </motion.div>
         ))}
@@ -64,9 +73,9 @@ const Achievements = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, delay: index * 0.1 }}
-              className="flex items-center gap-3 p-4 rounded-xl border border-white/8 bg-white/3"
+              className="flex items-center gap-3 p-4 rounded-xl border border-white/8 bg-white/3 transition-all duration-300 hover:border-white/15"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#a855f7] shrink-0"></div>
+              <ShieldCheck size={18} className="text-[#a855f7] shrink-0" />
               <span className="text-white/60 text-sm">{cert}</span>
             </motion.div>
           ))}

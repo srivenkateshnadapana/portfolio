@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Briefcase, ChevronRight } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -83,25 +84,33 @@ const Experience = () => {
               className="relative"
             >
               <div
-                className="absolute -left-8 md:-left-24 top-1 w-4 h-4 rounded-full border-2 border-[#0d0d0d] shadow-lg"
+                className="absolute -left-8 md:-left-24 top-1 w-4 h-4 rounded-full border-2 border-[#0d0d0d] shadow-lg flex items-center justify-center"
                 style={{ background: exp.color, boxShadow: `0 0 12px ${exp.color}80` }}
               ></div>
               <div className="group p-6 md:p-8 rounded-2xl border border-white/8 bg-white/4 hover:bg-white/8 transition-all duration-300 backdrop-blur-sm">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                    <p className="font-semibold mt-1" style={{ color: exp.color }}>{exp.company}</p>
+                  <div className="flex items-start gap-3">
+                    <div 
+                      className="mt-1 p-2 rounded-lg bg-white/5 border border-white/10 shrink-0"
+                      style={{ color: exp.color }}
+                    >
+                      <Briefcase size={18} strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                      <p className="font-semibold mt-1" style={{ color: exp.color }}>{exp.company}</p>
+                    </div>
                   </div>
                   <div className="text-right shrink-0">
                     <p className="text-white/50 text-sm">{exp.date}</p>
                     <p className="text-white/30 text-xs mt-1">{exp.location}</p>
                   </div>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-3 pl-11">
                   {exp.details.map((detail, idx) => (
                     <li key={idx} className="flex gap-3 text-white/60 text-sm leading-relaxed">
-                      <span style={{ color: exp.color }} className="mt-1.5 shrink-0 text-xs">▸</span>
-                      {detail}
+                      <ChevronRight size={16} style={{ color: exp.color }} className="mt-0.5 shrink-0" />
+                      <span>{detail}</span>
                     </li>
                   ))}
                 </ul>

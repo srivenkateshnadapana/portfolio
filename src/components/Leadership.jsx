@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ChevronRight, Compass, Cpu, Users, Code2 } from 'lucide-react';
 
 const Leadership = () => {
   return (
@@ -30,6 +31,7 @@ const Leadership = () => {
             role: 'Google I/O 2024',
             org: 'Digital Registrant & Community Participant',
             date: 'April 2024',
+            icon: Compass,
             points: [
               'Active community participant, engaging with the latest Google developer announcements and ecosystems.'
             ]
@@ -38,6 +40,7 @@ const Leadership = () => {
             role: 'Robotics Educator',
             org: 'Cambridge IGCSE & ICSE Programs',
             date: 'Weekly Cohorts',
+            icon: Cpu,
             points: [
               'Trained over 100 students weekly in robotics fundamentals, embedded IoT, and practical technical applications.'
             ]
@@ -46,6 +49,7 @@ const Leadership = () => {
             role: 'Mentorship Core',
             org: 'B.Sc Computer Science Labs',
             date: 'March 2026',
+            icon: Users,
             points: [
               'Conducted specialized hands-on logic development and project building for data analytics internships.'
             ]
@@ -54,6 +58,7 @@ const Leadership = () => {
             role: 'Tech Hackathons Leader',
             org: 'DevOps & Cloud Infrastructure',
             date: 'Ongoing',
+            icon: Code2,
             points: [
               'Designed and demonstrated production-ready CI/CD pipelines deploying frontend and backend systems seamlessly.'
             ]
@@ -64,25 +69,32 @@ const Leadership = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, delay: index * 0.1 }}
-            className="group p-7 rounded-2xl border border-white/8 bg-white/4 hover:bg-white/7 transition-all duration-300"
+            className="group p-7 rounded-2xl border border-white/8 bg-white/4 hover:bg-white/7 transition-all duration-300 flex flex-col justify-between"
           >
-            <div className="flex items-start justify-between gap-4 mb-4">
-              <div>
-                <h3 className="text-white font-bold text-lg leading-tight">{item.role}</h3>
-                <p className="text-[#34d399] text-sm mt-1 font-medium">{item.org}</p>
+            <div>
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-[#34d399] shrink-0 group-hover:scale-110 transition-transform">
+                    <item.icon size={18} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-lg leading-tight">{item.role}</h3>
+                    <p className="text-[#34d399] text-sm mt-1 font-medium">{item.org}</p>
+                  </div>
+                </div>
+                {item.date && <span className="text-white/30 text-xs shrink-0 mt-1">{item.date}</span>}
               </div>
-              {item.date && <span className="text-white/30 text-xs shrink-0 mt-1">{item.date}</span>}
+              {item.points.length > 0 && (
+                <ul className="space-y-2 pl-11">
+                  {item.points.map((point, pIdx) => (
+                    <li key={pIdx} className="flex gap-3 text-white/50 text-sm leading-relaxed">
+                      <ChevronRight size={16} className="text-[#34d399] mt-0.5 shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            {item.points.length > 0 && (
-              <ul className="space-y-2">
-                {item.points.map((point, pIdx) => (
-                  <li key={pIdx} className="flex gap-3 text-white/50 text-sm leading-relaxed">
-                    <span className="text-[#34d399] mt-1.5 text-xs shrink-0">▸</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            )}
           </motion.div>
         ))}
       </div>
