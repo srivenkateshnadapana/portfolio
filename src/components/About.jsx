@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SkillSphere from './SkillSphere';
 
 const About = () => {
   return (
@@ -28,8 +29,8 @@ const About = () => {
                style={{ background: 'radial-gradient(400px circle at 50% 50%, rgba(99, 102, 241, 0.08), transparent 80%)' }}>
           </div>
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8">
-              A developer who <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7] bg-300% animate-gradient">bridges</span> hardware and software.
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-8">
+              A developer who <span className="text-[#a855f7]">bridges</span> hardware and software.
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-6">
               I'm Sri Venkatesh Nadapana, a Robotics Engineer and Senior Technical Trainer. I specialize in industrial automation, cloud infrastructure, and mentoring the next generation of engineers to build, deploy, and scale intelligent systems.
@@ -53,22 +54,11 @@ const About = () => {
           <div className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                style={{ background: 'radial-gradient(400px circle at 50% 50%, rgba(99, 102, 241, 0.08), transparent 80%)' }}>
           </div>
-          <div className="relative z-10 w-full">
+          <div className="relative z-10 w-full h-full flex flex-col">
             <h3 className="text-white font-semibold text-lg mb-2">Technical Skills</h3>
             <p className="text-white/40 text-xs tracking-wider uppercase mb-4">Interactive 3D Sphere</p>
-            <div className="relative w-full h-[320px] flex items-center justify-center overflow-hidden border border-white/5 rounded-2xl bg-black/50">
-              {/* Fallback for canvas since we aren't using three.js here directly */}
-              <div className="text-center">
-                <p className="text-white/50 text-sm mb-2">Core Stack</p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">MERN Stack</span>
-                   <span className="px-3 py-1 bg-[#8b5cf6]/20 text-[#8b5cf6] rounded-full text-xs">ROS / PLC</span>
-                   <span className="px-3 py-1 bg-[#a855f7]/20 text-[#a855f7] rounded-full text-xs">AWS / GCP</span>
-                   <span className="px-3 py-1 bg-[#ec4899]/20 text-[#ec4899] rounded-full text-xs">ESP32 / IoT</span>
-                   <span className="px-3 py-1 bg-[#6366f1]/20 text-[#6366f1] rounded-full text-xs">Python / SQL</span>
-                   <span className="px-3 py-1 bg-[#10b981]/20 text-[#10b981] rounded-full text-xs">GenAI</span>
-                </div>
-              </div>
+            <div className="relative flex-1 w-full flex items-center justify-center overflow-hidden">
+               <SkillSphere />
             </div>
           </div>
         </motion.div>
