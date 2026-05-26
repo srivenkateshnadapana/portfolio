@@ -6,7 +6,7 @@ const experiences = [
     role: 'Data Analytics Internship Mentor',
     company: 'Aditya Degree College',
     date: 'Dec 2025 – Mar 2026',
-    location: 'India',
+    location: 'Tadepalligudem, Andhra Pradesh, India',
     color: '#10b981',
     details: [
       'Conducted specialized hands-on training for B.Sc Computer Science students, focusing on technical upskilling, logic development, and project building.',
