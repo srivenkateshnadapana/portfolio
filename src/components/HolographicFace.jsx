@@ -10,7 +10,7 @@ const HolographicFace = ({ scrollYProgress }) => {
   const y = useTransform(scrollYProgress, [0, 0.24, 0.52], ['0%', '-2%', '2%']);
   
   // Stays fully visible and transitions by scrolling up naturally with the viewport
-  const opacity = useTransform(scrollYProgress, [0], [0.85]);
+  const opacity = 0.85;
   
   // Neon glowing light streaks fade-in range (active during Slide 2 & 3)
   const trailsOpacity = useTransform(scrollYProgress, [0.18, 0.28], [0, 0.90]);
