@@ -11,12 +11,16 @@ const Hero = () => {
   });
 
   // ── Scroll-linked vertical translation of the entire slides container ──
-  const slidesY = useTransform(scrollYProgress, [0, 0.33, 0.40, 0.73, 0.80], ['0vh', '-100vh', '-100vh', '-200vh', '-200vh']);
+  const slidesY = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.35, 0.55, 0.70, 1.0],
+    ['0vh', '0vh', '-100vh', '-100vh', '-200vh', '-200vh']
+  );
 
   // ── Individual slide fade opacity layers driven by scroll progress ──
-  const opacity1 = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
-  const opacity2 = useTransform(scrollYProgress, [0.18, 0.33, 0.40, 0.65], [0, 1, 1, 0]);
-  const opacity3 = useTransform(scrollYProgress, [0.55, 0.73], [0, 1]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.20, 0.28], [1, 1, 0]);
+  const opacity2 = useTransform(scrollYProgress, [0.25, 0.35, 0.55, 0.65], [0, 1, 1, 0]);
+  const opacity3 = useTransform(scrollYProgress, [0.58, 0.70, 0.90, 1.0], [0, 1, 1, 0]);
 
   // ── Mouse parallax for the holographic canvas ─────────────────────────────
   const mouseX = useMotionValue(0);
