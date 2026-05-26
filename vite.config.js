@@ -16,6 +16,7 @@ export default defineConfig({
           'vendor-react': ['react', 'react-dom'],
           // Animation library
           'vendor-framer': ['framer-motion'],
+          'vendor-gsap': ['gsap', '@gsap/react'],
           // Icon library
           'vendor-icons': ['react-icons', 'lucide-react'],
         },
