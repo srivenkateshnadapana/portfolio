@@ -11,7 +11,7 @@ const Hero = () => {
   });
 
   // ── Scroll-linked vertical translation of the entire slides container ──
-  const slidesY = useTransform(scrollYProgress, [0, 0.33, 0.40, 0.73, 0.80], ['0vh', '-100vh', '-100vh', '-200vh', '-200vh']);
+  const slidesY = useTransform(scrollYProgress, [0, 0.33, 0.40, 0.73, 0.80], ['0%', '-100%', '-100%', '-200%', '-200%']);
 
   // ── Individual slide fade opacity layers driven by scroll progress ──
   const opacity1 = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
@@ -57,7 +57,6 @@ const Hero = () => {
         </div>
 
 
-
         {/* Layer 2 — radial vignette so particles fade elegantly at the edges */}
         <div
           className="absolute inset-0 z-[2] pointer-events-none"
@@ -69,7 +68,7 @@ const Hero = () => {
 
         {/* ── Scroll-linked Vertical Slides Container ── */}
         <motion.div
-          className="absolute inset-x-0 top-0 z-10 flex flex-col w-full h-[300vh] pointer-events-none select-none"
+          className="absolute inset-0 z-10 flex flex-col pointer-events-none select-none"
           style={{ y: slidesY }}
         >
           {/* SLIDE 1 — Full-screen centred title card (height: 100vh) */}
