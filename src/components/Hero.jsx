@@ -10,14 +10,19 @@ const Hero = () => {
     offset: ['start start', 'end start'],
   });
 
+  // ── Individual slide Y-axis translations (simulates scrolling up) ──
+  const slide1Y = useTransform(scrollYProgress, [0, 0.25, 0.35], ['0%', '0%', '-100%']);
+  const slide2Y = useTransform(scrollYProgress, [0, 0.25, 0.35, 0.55, 0.70], ['100%', '100%', '0%', '0%', '-100%']);
+  const slide3Y = useTransform(scrollYProgress, [0, 0.55, 0.70, 0.90, 1.0], ['100%', '100%', '0%', '0%', '-10%']);
+
   // ── Individual slide fade opacity layers driven by scroll progress ──
-  const opacity1 = useTransform(scrollYProgress, [0, 0.20, 0.28], [1, 1, 0]);
-  const opacity2 = useTransform(scrollYProgress, [0.25, 0.35, 0.55, 0.65], [0, 1, 1, 0]);
-  const opacity3 = useTransform(scrollYProgress, [0.58, 0.70, 0.90, 1.0], [0, 1, 1, 0]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.25, 0.35], [1, 1, 0]);
+  const opacity2 = useTransform(scrollYProgress, [0, 0.25, 0.35, 0.55, 0.70], [0, 0, 1, 1, 0]);
+  const opacity3 = useTransform(scrollYProgress, [0, 0.55, 0.70, 0.90, 1.0], [0, 0, 1, 1, 0]);
 
   // ── Premium slide horizontal parallax offsets ──
   const slide2X = useTransform(scrollYProgress, [0.25, 0.35, 0.55, 0.65], [-80, 0, 0, -80]);
-  const slide3X = useTransform(scrollYProgress, [0.58, 0.70, 0.90, 1.0], [80, 0, 0, 80]);
+  const slide3X = useTransform(scrollYProgress, [0.55, 0.70, 0.90, 1.0], [80, 0, 0, 80]);
 
   // ── Mouse parallax ─────────────────────────────────────────────────────────
   const mouseX = useMotionValue(0);
@@ -69,7 +74,7 @@ const Hero = () => {
         {/* ── SLIDE 1 — Full-screen centred title card ── */}
         <motion.div
           className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none select-none"
-          style={{ opacity: opacity1 }}
+          style={{ opacity: opacity1, y: slide1Y }}
         >
           <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#a3e635] uppercase mb-5 font-light">
             CREATIVE TECHNOLOGIST
@@ -89,7 +94,7 @@ const Hero = () => {
         {/* ── SLIDE 2 — Left-aligned "What I Do" card ── */}
         <motion.div
           className="absolute inset-0 z-10 flex flex-col items-start justify-center px-8 md:px-24"
-          style={{ opacity: opacity2, x: slide2X }}
+          style={{ opacity: opacity2, x: slide2X, y: slide2Y }}
         >
           <div className="relative p-8 md:p-12 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md max-w-2xl shadow-2xl shadow-black/50 overflow-hidden group select-text">
             {/* Subtle spotlight glow */}
@@ -113,7 +118,7 @@ const Hero = () => {
         {/* ── SLIDE 3 — Right-aligned Philosophy card ── */}
         <motion.div
           className="absolute inset-0 z-10 flex flex-col items-end justify-center px-8 md:px-24 text-right"
-          style={{ opacity: opacity3, x: slide3X }}
+          style={{ opacity: opacity3, x: slide3X, y: slide3Y }}
         >
           <div className="relative p-8 md:p-12 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md max-w-2xl shadow-2xl shadow-black/50 overflow-hidden group text-right flex flex-col items-end select-text">
             {/* Subtle spotlight glow */}
