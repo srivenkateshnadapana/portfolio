@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import HolographicFace from './HolographicFace';
+import DeveloperFace from './DeveloperFace';
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -61,9 +61,9 @@ const Hero = () => {
           />
         </div>
 
-        {/* Layer 1 — 25 000-particle Perlin-noise flow field (GPU shaders) */}
+        {/* Layer 1 — High-Fidelity developer portrait and swirling neon light paths scroll-bound animation */}
         <div className="absolute inset-0 z-[1] w-full h-full pointer-events-none select-none">
-          <HolographicFace scrollYProgress={scrollYProgress} />
+          <DeveloperFace scrollYProgress={scrollYProgress} />
         </div>
 
         {/* Layer 2 — radial vignette so particles fade elegantly at the edges */}

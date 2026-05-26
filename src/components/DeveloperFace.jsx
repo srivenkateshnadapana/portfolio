@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useTransform } from 'framer-motion';
 
-const HolographicFace = ({ scrollYProgress }) => {
+const DeveloperFace = ({ scrollYProgress }) => {
   // ── Scroll-linked transformations for the high-fidelity face portrait ──
   // Matches layout alignments: centered on Slide 1, shifted right on Slide 2 (left text),
   // shifted left on Slide 3 (right text), and extremely close-up zoom on transition.
@@ -159,4 +159,4 @@ const HolographicFace = ({ scrollYProgress }) => {
   );
 };
 
-export default HolographicFace;
+export default DeveloperFace;
