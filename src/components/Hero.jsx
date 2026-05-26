@@ -114,7 +114,7 @@ const Hero = () => {
             </span>
           </h2>
           <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-sm">
-            MERN Stack&nbsp;·&nbsp;Cloud Infrastructure&nbsp;·&nbsp;AI
+            MERN Stack&nbsp;·&nbsp;AI Integration&nbsp;·&nbsp;Creative Front-End
           </p>
         </motion.div>
 
@@ -135,8 +135,8 @@ const Hero = () => {
             </span>{' '}
             &amp; software.
           </h2>
-          <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-sm">
-            From complex software systems to physical hardware deployed at scale.
+          <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-md">
+            Robotics&nbsp;·&nbsp;IoT Systems&nbsp;·&nbsp;High-Impact Mentorship
           </p>
         </motion.div>
 
