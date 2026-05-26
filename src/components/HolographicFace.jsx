@@ -5,22 +5,22 @@ const HolographicFace = ({ scrollYProgress }) => {
   // ── Scroll-linked transformations for the high-fidelity face portrait ──
   // Matches layout alignments: centered on Slide 1, shifted right on Slide 2 (left text),
   // shifted left on Slide 3 (right text), and extremely close-up zoom on transition.
-  const scale = useTransform(scrollYProgress, [0, 0.24, 0.52, 0.80, 1.0], [1.08, 1.22, 1.35, 1.60, 1.85]);
-  const x = useTransform(scrollYProgress, [0, 0.24, 0.52, 0.80, 1.0], ['0%', '14%', '-14%', '0%', '0%']);
-  const y = useTransform(scrollYProgress, [0, 0.24, 0.52, 0.80, 1.0], ['0%', '-2%', '2%', '-4%', '-8%']);
+  const scale = useTransform(scrollYProgress, [0, 0.24, 0.52, 0.80], [1.08, 1.22, 1.35, 1.55]);
+  const x = useTransform(scrollYProgress, [0, 0.24, 0.52], ['0%', '14%', '-14%']);
+  const y = useTransform(scrollYProgress, [0, 0.24, 0.52], ['0%', '-2%', '2%']);
   
-  // Fade out face and trails gracefully during the About transition
-  const opacity = useTransform(scrollYProgress, [0, 0.80, 0.88], [0.85, 0.85, 0]);
+  // Stays fully visible and transitions by scrolling up naturally with the viewport
+  const opacity = useTransform(scrollYProgress, [0], [0.85]);
   
   // Neon glowing light streaks fade-in range (active during Slide 2 & 3)
-  const trailsOpacity = useTransform(scrollYProgress, [0.20, 0.32, 0.76, 0.84], [0, 0.90, 0.90, 0]);
+  const trailsOpacity = useTransform(scrollYProgress, [0.18, 0.28], [0, 0.90]);
   
   // Light trails scale/rotation slightly shifts for dynamic parallax
-  const trailsScale = useTransform(scrollYProgress, [0.20, 0.80], [0.95, 1.15]);
-  const trailsRotate = useTransform(scrollYProgress, [0.20, 0.80], [-15, 25]);
+  const trailsScale = useTransform(scrollYProgress, [0.18, 0.80], [0.95, 1.10]);
+  const trailsRotate = useTransform(scrollYProgress, [0.18, 0.80], [-15, 15]);
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#0a0a0a] pointer-events-none select-none">
+    <div className="absolute inset-0 w-full h-full overflow-hidden bg-transparent pointer-events-none select-none">
       {/* ── Background atmospheric color glow ── */}
       <div className="absolute inset-0 pointer-events-none z-[1] mix-blend-screen opacity-35">
         <div 

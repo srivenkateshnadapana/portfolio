@@ -6,7 +6,6 @@
   /* Prevent horizontal scroll without breaking sticky positioning */
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
   }
 
   body {

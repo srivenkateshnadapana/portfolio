@@ -11,17 +11,17 @@ const Hero = () => {
     offset: ['start start', 'end start'],
   });
 
-  // ── Slide 1: Title (visible from 0% → 20% of scroll) ──────────────────────
-  const y1      = useTransform(scrollYProgress, [0, 0.24], ['0%', '-8%']);
-  const opacity1 = useTransform(scrollYProgress, [0, 0.20], [1, 0]);
+  // ── Slide 1: Title (visible from 0% → 16% of scroll) ──────────────────────
+  const y1      = useTransform(scrollYProgress, [0, 0.20], ['0%', '-8%']);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.16], [1, 0]);
 
-  // ── Slide 2: What I Do (enters 20%–26%, holds until 46%, exits by 52%) ─────
-  const y2      = useTransform(scrollYProgress, [0.20, 0.26, 0.46, 0.52], ['5%', '0%', '0%', '-5%']);
-  const opacity2 = useTransform(scrollYProgress, [0.20, 0.26, 0.46, 0.52], [0, 1, 1, 0]);
+  // ── Slide 2: What I Do (enters 18%–24%, holds until 44%, exits by 50%) ─────
+  const y2      = useTransform(scrollYProgress, [0.18, 0.24, 0.44, 0.50], ['5%', '0%', '0%', '-5%']);
+  const opacity2 = useTransform(scrollYProgress, [0.18, 0.24, 0.44, 0.50], [0, 1, 1, 0]);
 
-  // ── Slide 3: Philosophy (enters 48%–54%, holds until 80%, fades by 88%) ───
-  const y3      = useTransform(scrollYProgress, [0.48, 0.54, 0.80, 0.88], ['5%', '0%', '0%', '-5%']);
-  const opacity3 = useTransform(scrollYProgress, [0.48, 0.54, 0.80, 0.88], [0, 1, 1, 0]);
+  // ── Slide 3: Philosophy (enters 46%–52%, holds until end) ──────────────────
+  const y3      = useTransform(scrollYProgress, [0.46, 0.52], ['5%', '0%']);
+  const opacity3 = useTransform(scrollYProgress, [0.46, 0.52], [0, 1]);
 
   // ── Mouse parallax for the holographic canvas ─────────────────────────────
   const mouseX = useMotionValue(0);
