@@ -10,17 +10,13 @@ const Hero = () => {
     offset: ['start start', 'end start'],
   });
 
-  // ── Slide 1: Title (visible from 0% → 16% of scroll) ──────────────────────
-  const y1      = useTransform(scrollYProgress, [0, 0.20], ['0%', '-8%']);
-  const opacity1 = useTransform(scrollYProgress, [0, 0.16], [1, 0]);
+  // ── Scroll-linked vertical translation of the entire slides container ──
+  const slidesY = useTransform(scrollYProgress, [0, 0.33, 0.40, 0.73, 0.80], ['0vh', '-100vh', '-100vh', '-200vh', '-200vh']);
 
-  // ── Slide 2: What I Do (enters 18%–24%, holds until 44%, exits by 50%) ─────
-  const y2      = useTransform(scrollYProgress, [0.18, 0.24, 0.44, 0.50], ['5%', '0%', '0%', '-5%']);
-  const opacity2 = useTransform(scrollYProgress, [0.18, 0.24, 0.44, 0.50], [0, 1, 1, 0]);
-
-  // ── Slide 3: Philosophy (enters 46%–52%, holds until end) ──────────────────
-  const y3      = useTransform(scrollYProgress, [0.46, 0.52], ['5%', '0%']);
-  const opacity3 = useTransform(scrollYProgress, [0.46, 0.52], [0, 1]);
+  // ── Individual slide fade opacity layers driven by scroll progress ──
+  const opacity1 = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const opacity2 = useTransform(scrollYProgress, [0.18, 0.33, 0.40, 0.65], [0, 1, 1, 0]);
+  const opacity3 = useTransform(scrollYProgress, [0.55, 0.73], [0, 1]);
 
   // ── Mouse parallax for the holographic canvas ─────────────────────────────
   const mouseX = useMotionValue(0);
@@ -71,69 +67,69 @@ const Hero = () => {
           }}
         />
 
-        {/* ════════════════════════════════════════════════════════════
-            SLIDE 1 — Full-screen centred title card (z-10)
-        ════════════════════════════════════════════════════════════ */}
+        {/* ── Scroll-linked Vertical Slides Container ── */}
         <motion.div
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center pointer-events-none select-none px-6"
-          style={{ opacity: opacity1, y: y1 }}
+          className="absolute inset-x-0 top-0 z-10 flex flex-col w-full h-[300vh] pointer-events-none select-none"
+          style={{ y: slidesY }}
         >
-          <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#a3e635] uppercase mb-5 font-light">
-            CREATIVE TECHNOLOGIST
-          </p>
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white leading-none tracking-tight">
-            Sri Venkatesh
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7]">
-              Nadapana
-            </span>
-          </h1>
-          <p className="mt-6 text-base md:text-xl text-white/50 font-light">
-            Robotics Engineer&nbsp;·&nbsp;AI Integration&nbsp;·&nbsp;Creative Front-End
-          </p>
-        </motion.div>
+          {/* SLIDE 1 — Full-screen centred title card (height: 100vh) */}
+          <motion.div
+            className="w-full h-screen flex flex-col items-center justify-center text-center px-6"
+            style={{ opacity: opacity1 }}
+          >
+            <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#a3e635] uppercase mb-5 font-light">
+              CREATIVE TECHNOLOGIST
+            </p>
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-white leading-none tracking-tight">
+              Sri Venkatesh
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#a855f7]">
+                Nadapana
+              </span>
+            </h1>
+            <p className="mt-6 text-base md:text-xl text-white/50 font-light">
+              Robotics Engineer&nbsp;·&nbsp;AI Integration&nbsp;·&nbsp;Creative Front-End
+            </p>
+          </motion.div>
 
-        {/* ════════════════════════════════════════════════════════════
-            SLIDE 2 — Left-aligned "What I Do" card
-        ════════════════════════════════════════════════════════════ */}
-        <motion.div
-          className="absolute inset-0 z-10 flex flex-col items-start justify-center px-8 md:px-24 pointer-events-none select-none"
-          style={{ opacity: opacity2, y: y2 }}
-        >
-          <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#6366f1] uppercase mb-3 font-light">
-            WHAT I DO
-          </p>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
-            I build digital{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">
-              experiences.
-            </span>
-          </h2>
-          <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-sm">
-            MERN Stack&nbsp;·&nbsp;AI Integration&nbsp;·&nbsp;Creative Front-End
-          </p>
-        </motion.div>
+          {/* SLIDE 2 — Left-aligned "What I Do" card (height: 100vh) */}
+          <motion.div
+            className="w-full h-screen flex flex-col items-start justify-center px-8 md:px-24"
+            style={{ opacity: opacity2 }}
+          >
+            <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#6366f1] uppercase mb-3 font-light">
+              WHAT I DO
+            </p>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
+              I build digital{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">
+                experiences.
+              </span>
+            </h2>
+            <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-sm">
+              MERN Stack&nbsp;·&nbsp;AI Integration&nbsp;·&nbsp;Creative Front-End
+            </p>
+          </motion.div>
 
-        {/* ════════════════════════════════════════════════════════════
-            SLIDE 3 — Right-aligned "Philosophy" card
-        ════════════════════════════════════════════════════════════ */}
-        <motion.div
-          className="absolute inset-0 z-10 flex flex-col items-end justify-center px-8 md:px-24 text-right pointer-events-none select-none"
-          style={{ opacity: opacity3, y: y3 }}
-        >
-          <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#f59e0b] uppercase mb-3 font-light">
-            MY PHILOSOPHY
-          </p>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
-            Bridging{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">
-              hardware
-            </span>{' '}
-            &amp; software.
-          </h2>
-          <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-md">
-            Robotics&nbsp;·&nbsp;IoT Systems&nbsp;·&nbsp;High-Impact Mentorship
-          </p>
+          {/* SLIDE 3 — Right-aligned "Philosophy" card (height: 100vh) */}
+          <motion.div
+            className="w-full h-screen flex flex-col items-end justify-center px-8 md:px-24 text-right"
+            style={{ opacity: opacity3 }}
+          >
+            <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#f59e0b] uppercase mb-3 font-light">
+              MY PHILOSOPHY
+            </p>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
+              Bridging{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">
+                hardware
+              </span>{' '}
+              &amp; software.
+            </h2>
+            <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-md">
+              Robotics&nbsp;·&nbsp;IoT Systems&nbsp;·&nbsp;High-Impact Mentorship
+            </p>
+          </motion.div>
         </motion.div>
 
         {/* ── Scroll nudge indicator ──────────────────────────────────── */}
