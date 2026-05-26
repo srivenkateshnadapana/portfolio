@@ -8,11 +8,11 @@ const SkillSphere = () => {
     if (!containerRef.current) return;
 
     const myTags = [
-      'React.js', 'Node.js', 'MongoDB', 'Express.js',
-      'Python', 'C++', 'Java', 'SQL',
-      'ROS', 'PLC Automation', 'ESP32 / IoT', 'Arduino',
-      'AWS Cloud', 'GCP DevOps', 'Docker', 'Git / GitHub',
-      'GenAI APIs', 'Prompt Engineering', 'Kubernetes', 'Linux Systems'
+      'ROS', 'PLC Automation', 'ABB RobotStudio', 'Mechatronics',
+      'AWS', 'Google Cloud', 'Azure', 'VMware Workstation',
+      'Ubuntu', 'Kali Linux', 'Parrot OS', 'IoT Telemetry',
+      'Python', 'NumPy', 'Pandas', 'Generative AI',
+      'Prompt Engineering', 'Vertex AI', 'HTML5 & CSS', 'SEO'
     ];
 
     const options = {

@@ -58,16 +58,16 @@ const GlowCard = ({ children, glowColor = '#6366f1', className = '', style = {} 
 };
 
 const About = () => {
-  const bio1 = "I'm Sri Venkatesh Nadapana, a Robotics Engineer and Senior Technical Trainer. I specialize in industrial automation, cloud infrastructure, and mentoring the next generation of engineers to build, deploy, and scale intelligent systems.";
-  const bio2 = "I have delivered specialized technical modules spanning cloud infrastructure and advanced systems engineering, alongside hands-on hardware training for hundreds of students in robotics fundamentals and embedded IoT.";
-  const bio3 = "I thrive at the intersection of complex software architecture, real-time control systems, and impactful technical education.";
+  const bio1 = "I am a Robotics Engineer and Technical Trainer with a passion for designing Industrial Mobile Robots and building real-time machine control systems. I have trained over 100 students weekly in robotics fundamentals and embedded IoT.";
+  const bio2 = "My expertise extends into cloud architecture and DevOps, deploying scalable servers on AWS, GCP, and Azure. I'm highly proficient across diverse environments—from Linux distributions and Android x86 modding to virtualization with VMware.";
+  const bio3 = "Whether I'm leveraging Python and Pandas for data analysis, exploring Generative AI and Prompt Engineering, or crafting clean web UIs, I thrive on simplifying complex concepts and bridging the gap between cutting-edge hardware and software.";
 
   const softSkills = [
-    { label: 'Curriculum Design', color: '#6366f1' },
-    { label: 'Technical Mentorship', color: '#a855f7' },
-    { label: 'System Architecture', color: '#10b981' },
-    { label: 'Problem-Solving', color: '#f59e0b' },
-    { label: 'Project-Based Learning', color: '#3b82f6' },
+    { label: 'Project-Based Learning', color: '#6366f1' },
+    { label: 'Simplifying Complexity', color: '#a855f7' },
+    { label: 'SEO & Optimization', color: '#10b981' },
+    { label: 'Industrial Automation', color: '#f59e0b' },
+    { label: 'Cloud Deployments', color: '#3b82f6' },
   ];
 
   return (
