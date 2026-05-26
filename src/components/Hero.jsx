@@ -73,7 +73,7 @@ const Hero = () => {
         >
           {/* SLIDE 1 — Full-screen centred title card (height: 100vh) */}
           <motion.div
-            className="w-full h-screen flex flex-col items-center justify-center text-center px-6"
+            className="w-full h-screen shrink-0 flex flex-col items-center justify-center text-center px-6"
             style={{ opacity: opacity1 }}
           >
             <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#a3e635] uppercase mb-5 font-light">
@@ -93,7 +93,7 @@ const Hero = () => {
 
           {/* SLIDE 2 — Left-aligned "What I Do" card (height: 100vh) */}
           <motion.div
-            className="w-full h-screen flex flex-col items-start justify-center px-8 md:px-24"
+            className="w-full h-screen shrink-0 flex flex-col items-start justify-center px-8 md:px-24"
             style={{ opacity: opacity2 }}
           >
             <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#6366f1] uppercase mb-3 font-light">
@@ -110,9 +110,9 @@ const Hero = () => {
             </p>
           </motion.div>
 
-          {/* SLIDE 3 — Right-aligned "Philosophy" card (height: 100vh) */}
+          {/* SLIDE 3 — Philosophy card (height: 100vh) */}
           <motion.div
-            className="w-full h-screen flex flex-col items-end justify-center px-8 md:px-24 text-right"
+            className="w-full h-screen shrink-0 flex flex-col items-end justify-center px-8 md:px-24 text-right"
             style={{ opacity: opacity3 }}
           >
             <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#f59e0b] uppercase mb-3 font-light">
