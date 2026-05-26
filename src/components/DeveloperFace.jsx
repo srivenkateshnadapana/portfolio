@@ -2,15 +2,7 @@ import React from 'react';
 import { motion, useTransform } from 'framer-motion';
 
 const DeveloperFace = ({ scrollYProgress }) => {
-  // ── Scroll-linked transformations for the high-fidelity face portrait ──
-  // Matches layout alignments: centered on Slide 1, shifted right on Slide 2 (left text),
-  // shifted left on Slide 3 (right text), and extremely close-up zoom on transition.
-  const scale = useTransform(scrollYProgress, [0, 0.24, 0.52, 0.80], [1.08, 1.22, 1.35, 1.55]);
-  const x = useTransform(scrollYProgress, [0, 0.24, 0.52], ['0%', '14%', '-14%']);
-  const y = useTransform(scrollYProgress, [0, 0.24, 0.52], ['0%', '-2%', '2%']);
-  
-  // Stays fully visible and transitions by scrolling up naturally with the viewport
-  const opacity = 0.85;
+
   
   // Neon glowing light streaks fade-in range (active during Slide 2 & 3)
   const trailsOpacity = useTransform(scrollYProgress, [0.18, 0.28], [0, 0.90]);
@@ -33,29 +25,7 @@ const DeveloperFace = ({ scrollYProgress }) => {
         />
       </div>
 
-      {/* ── Outer animated container: drives portrait positioning and scale ── */}
-      <motion.div 
-        className="absolute inset-0 w-full h-full flex items-center justify-center"
-        style={{ scale, x, y, opacity }}
-      >
-        {/* Sri Venkatesh Nadapana's actual professional portrait */}
-        <img 
-          src="/face.jpg" 
-          alt="Sri Venkatesh Nadapana Portrait" 
-          className="w-full h-full object-cover md:object-contain select-none max-w-4xl"
-          style={{
-            filter: 'brightness(1.08) contrast(1.04) saturate(0.95)',
-          }}
-        />
 
-        {/* ── Radial spotlight vignette: blends borders of face.jpg perfectly into #0a0a0a ── */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at 50% 45%, transparent 20%, rgba(10,10,10,0.3) 48%, rgba(10,10,10,0.95) 75%, #0a0a0a 96%)'
-          }}
-        />
-      </motion.div>
 
       {/* ── Layer 2: Glowing Fiber-Optic Light Streaks (SVG curves wrapping the head) ── */}
       <motion.div 
