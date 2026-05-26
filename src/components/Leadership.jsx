@@ -1,128 +1,128 @@
 import { motion } from 'framer-motion';
-import { ChevronRight, Compass, Cpu, Users, Code2 } from 'lucide-react';
-import GlowCard from './GlowCard';
+import { Compass, Cpu, Users, Code2 } from 'lucide-react';
+
+const roles = [
+  {
+    role: 'Google I/O 2024',
+    org: 'Digital Registrant & Community Participant',
+    date: 'April 2024',
+    icon: Compass,
+    points: [
+      'Active community participant, engaging with the latest Google developer announcements and ecosystems.',
+    ],
+  },
+  {
+    role: 'Robotics Educator',
+    org: 'Cambridge IGCSE & ICSE Programs',
+    date: 'Weekly Cohorts',
+    icon: Cpu,
+    points: [
+      'Trained over 100 students weekly in robotics fundamentals, embedded IoT, and practical technical applications.',
+    ],
+  },
+  {
+    role: 'Mentorship Core',
+    org: 'B.Sc Computer Science',
+    date: 'March 2026',
+    icon: Users,
+    points: [
+      'Conducted specialized hands-on logic development and project building for data analytics internships.',
+    ],
+  },
+  {
+    role: 'Tech Hackathons Leader',
+    org: 'DevOps & Cloud Infrastructure',
+    date: 'Ongoing',
+    icon: Code2,
+    points: [
+      'Designed and demonstrated production-ready CI/CD pipelines deploying frontend and backend systems seamlessly.',
+    ],
+  },
+];
+
+const stats = [
+  { num: '35+',  label: 'Monthly Google Cloud Credits Earned' },
+  { num: '100+', label: 'Cambridge Students Trained Weekly' },
+  { num: '4+',   label: 'Cloud Architecture Stacks Mastered' },
+  { num: '3+',   label: 'Active Industry Validations (2025-26)' },
+];
 
 const Leadership = () => {
   return (
     <section id="leadership" className="relative py-32 px-6 md:px-24 bg-[#0a0a0a]">
-      <motion.div 
+
+      <motion.div
+        className="flex items-center gap-4 mb-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="flex items-center gap-4 mb-16"
+        transition={{ duration: 0.5 }}
       >
-        <span className="text-[#34d399] text-sm tracking-[0.3em] uppercase font-light">
-          05 / Impact
-        </span>
-        <div className="flex-1 h-px bg-white/10"></div>
+        <span className="text-[#34d399] text-sm tracking-[0.3em] uppercase font-light">05 / Impact</span>
+        <div className="flex-1 h-px bg-white/10" />
       </motion.div>
 
-      <motion.h2 
+      <motion.h2
+        className="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-bold text-white mb-16 leading-tight"
+        transition={{ duration: 0.6 }}
       >
-        Community &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#3b82f6]">Mentorship</span>
+        Community &amp;{' '}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#3b82f6]">Mentorship</span>
       </motion.h2>
 
+      {/* Cards — reference site style: plain hover, no GlowCard */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[
-          {
-            role: 'Google I/O 2024',
-            org: 'Digital Registrant & Community Participant',
-            date: 'April 2024',
-            icon: Compass,
-            points: [
-              'Active community participant, engaging with the latest Google developer announcements and ecosystems.'
-            ]
-          },
-          {
-            role: 'Robotics Educator',
-            org: 'Cambridge IGCSE & ICSE Programs',
-            date: 'Weekly Cohorts',
-            icon: Cpu,
-            points: [
-              'Trained over 100 students weekly in robotics fundamentals, embedded IoT, and practical technical applications.'
-            ]
-          },
-          {
-            role: 'Mentorship Core',
-            org: 'B.Sc Computer Science',
-            date: 'March 2026',
-            icon: Users,
-            points: [
-              'Conducted specialized hands-on logic development and project building for data analytics internships.'
-            ]
-          },
-          {
-            role: 'Tech Hackathons Leader',
-            org: 'DevOps & Cloud Infrastructure',
-            date: 'Ongoing',
-            icon: Code2,
-            points: [
-              'Designed and demonstrated production-ready CI/CD pipelines deploying frontend and backend systems seamlessly.'
-            ]
-          }
-        ].map((item, index) => (
+        {roles.map((item, index) => (
           <motion.div
             key={index}
+            className="group p-7 rounded-2xl border border-white/8 bg-white/[0.04] hover:bg-white/[0.07] transition-all duration-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, delay: index * 0.1 }}
-            className="h-full flex flex-col"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.08 }}
           >
-            <GlowCard
-              glowColor="#34d399"
-              className="p-7 rounded-2xl border border-white/8 flex flex-col justify-between h-full"
-              style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-              }}
-            >
-              <div>
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-[#34d399] shrink-0 group-hover:scale-110 transition-transform">
-                      <item.icon size={18} strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold text-lg leading-tight">{item.role}</h3>
-                      <p className="text-[#34d399] text-sm mt-1 font-medium">{item.org}</p>
-                    </div>
-                  </div>
-                  {item.date && <span className="text-white/30 text-xs shrink-0 mt-1">{item.date}</span>}
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <div className="flex items-start gap-3">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-[#34d399] shrink-0 group-hover:scale-110 transition-transform">
+                  <item.icon size={18} strokeWidth={1.5} />
                 </div>
-                {item.points.length > 0 && (
-                  <ul className="space-y-2 pl-11">
-                    {item.points.map((point, pIdx) => (
-                      <li key={pIdx} className="flex gap-3 text-white/50 text-sm leading-relaxed">
-                        <ChevronRight size={16} className="text-[#34d399] mt-0.5 shrink-0" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <div>
+                  <h3 className="text-white font-bold text-lg leading-tight">{item.role}</h3>
+                  <p className="text-[#34d399] text-sm mt-1 font-medium">{item.org}</p>
+                </div>
               </div>
-            </GlowCard>
+              {item.date && (
+                <span className="text-white/30 text-xs shrink-0 mt-1">{item.date}</span>
+              )}
+            </div>
+
+            {item.points.length > 0 && (
+              <ul className="space-y-2 pl-11">
+                {item.points.map((point, pIdx) => (
+                  <li key={pIdx} className="flex gap-3 text-white/50 text-sm leading-relaxed">
+                    <span className="text-[#34d399] mt-1.5 text-xs shrink-0">▸</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </motion.div>
         ))}
       </div>
 
+      {/* Stats grid */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-        {[
-          { num: '35+', label: 'Monthly Google Cloud Credits Earned' },
-          { num: '100+', label: 'Cambridge Students Trained Weekly' },
-          { num: '4+', label: 'Cloud Architecture Stacks Mastered' },
-          { num: '3+', label: 'Active Industry Validations (2025-26)' }
-        ].map((stat, idx) => (
+        {stats.map((stat, idx) => (
           <motion.div
             key={idx}
+            className="text-center p-6 rounded-2xl border border-white/8 bg-white/[0.03]"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, delay: 0.2 + (idx * 0.1) }}
-            className="text-center p-6 rounded-2xl border border-white/8 bg-white/3"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 + idx * 0.08 }}
           >
             <p className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#3b82f6]">
               {stat.num}
@@ -131,6 +131,7 @@ const Leadership = () => {
           </motion.div>
         ))}
       </div>
+
     </section>
   );
 };

@@ -13,25 +13,29 @@ function App() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Smooth springs to make the glow glide gracefully behind the mouse (with damping)
-  const glowX = useSpring(mouseX, { stiffness: 80, damping: 25 });
-  const glowY = useSpring(mouseY, { stiffness: 80, damping: 25 });
+  // Smooth mouse-following glow — damped spring so it trails naturally
+  const glowX = useSpring(mouseX, { stiffness: 70, damping: 22 });
+  const glowY = useSpring(mouseY, { stiffness: 70, damping: 22 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const onMouseMove = (e) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
     };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', onMouseMove);
+    return () => window.removeEventListener('mousemove', onMouseMove);
   }, [mouseX, mouseY]);
 
   return (
-    <div className="relative overflow-hidden min-h-screen bg-[#0a0a0a]">
-      {/* Global Background Mouse Glow Tracker */}
+    /*
+      IMPORTANT: Do NOT add overflow-hidden here — it breaks sticky positioning
+      in Chrome/Safari. overflow-x-hidden is applied via CSS on html/body.
+    */
+    <div className="min-h-screen bg-[#0a0a0a]">
+
+      {/* Global ambient mouse-follow glow — fixed so it tracks across sections */}
       <motion.div
-        className="pointer-events-none fixed w-[600px] h-[600px] rounded-full bg-radial-glow blur-[80px] z-0 opacity-75 mix-blend-screen"
+        className="pointer-events-none fixed w-[500px] h-[500px] rounded-full bg-radial-glow blur-[90px] z-0 opacity-60 mix-blend-screen"
         style={{
           x: glowX,
           y: glowY,
@@ -41,7 +45,7 @@ function App() {
           left: 0,
         }}
       />
-      
+
       <main className="relative z-10">
         <Header />
         <Hero />

@@ -1,70 +1,75 @@
 import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   return (
     <section id="contact" className="relative py-32 px-6 md:px-24 bg-[#0d0d0d] overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#6366f1] opacity-10 blur-[100px] pointer-events-none"></div>
-      
-      <motion.div 
+      {/* Bottom ambient glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#6366f1] opacity-10 blur-[100px] pointer-events-none" />
+
+      <motion.div
+        className="flex items-center gap-4 mb-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="flex items-center gap-4 mb-16"
+        transition={{ duration: 0.5 }}
       >
-        <span className="text-[#ec4899] text-sm tracking-[0.3em] uppercase font-light">
-          06 / Contact
-        </span>
-        <div className="flex-1 h-px bg-white/10"></div>
+        <span className="text-[#ec4899] text-sm tracking-[0.3em] uppercase font-light">06 / Contact</span>
+        <div className="flex-1 h-px bg-white/10" />
       </motion.div>
 
       <div className="max-w-3xl mx-auto text-center">
         <motion.h2
+          className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6"
+          transition={{ duration: 0.7 }}
         >
-          Let's build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1]">great</span> together.
+          Let's build something{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ec4899] to-[#6366f1]">great</span>{' '}
+          together.
         </motion.h2>
-        
+
         <motion.p
+          className="text-white/50 text-lg mb-12 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, delay: 0.1 }}
-          className="text-white/50 text-lg mb-12 leading-relaxed"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           Whether it's a startup idea, a creative project, or just a conversation — I'm open to connecting.
         </motion.p>
-        
+
         <motion.a
+          href="mailto:nadapanasrivenkatesh1@gmail.com"
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg mb-16 transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)]"
+          style={{
+            background: 'linear-gradient(135deg, #6366f1, #a855f7)',
+            boxShadow: '0 0 40px rgba(99,102,241,0.4)',
+          }}
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.05 }}
-          viewport={{ once: true, delay: 0.2 }}
-          href="mailto:nadapanasrivenkatesh1@gmail.com"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg mb-16 transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.6)]"
-          style={{
-            background: 'linear-gradient(135deg, #6366f1, #a855f7)',
-            boxShadow: '0 0 40px rgba(99, 102, 241, 0.4)'
-          }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Mail size={22} className="stroke-[2px]" />
+          <span>✉</span>
           <span>nadapanasrivenkatesh1@gmail.com</span>
         </motion.a>
-        
-        <motion.div 
+
+        <motion.div
+          className="flex justify-center gap-6 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, delay: 0.3 }}
-          className="flex justify-center gap-6 flex-wrap"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           <a
             href="https://linkedin.com/in/nadapanasrivenkatesh"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-[#3b82f6]/40 hover:bg-[#3b82f6]/5"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"
             style={{ color: '#3b82f6' }}
           >
             <FaLinkedin size={18} />
@@ -74,7 +79,7 @@ const Contact = () => {
             href="https://github.com/nadapanasrivenkatesh"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-[#a5b4fc]/40 hover:bg-[#a5b4fc]/5"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"
             style={{ color: '#a5b4fc' }}
           >
             <FaGithub size={18} />
@@ -84,7 +89,7 @@ const Contact = () => {
             href="https://wa.me/917013153753"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-[#34d399]/40 hover:bg-[#34d399]/5"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"
             style={{ color: '#34d399' }}
           >
             <FaWhatsapp size={18} />
@@ -93,6 +98,7 @@ const Contact = () => {
         </motion.div>
       </div>
 
+      {/* Footer */}
       <div className="mt-24 pt-8 border-t border-white/8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-white/20 text-sm">
           © 2026 Sri Venkatesh Nadapana. All rights reserved.
