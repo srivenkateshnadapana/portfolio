@@ -14,8 +14,6 @@ export default defineConfig({
         manualChunks: {
           // Core React runtime
           'vendor-react': ['react', 'react-dom'],
-          // Three.js is ~600 kB on its own — isolate it completely
-          'vendor-three': ['three'],
           // Animation library
           'vendor-framer': ['framer-motion'],
           // Icon library
