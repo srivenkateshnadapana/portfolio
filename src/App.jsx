@@ -17,10 +17,31 @@ function App() {
   const glowX = useSpring(mouseX, { stiffness: 70, damping: 22 });
   const glowY = useSpring(mouseY, { stiffness: 70, damping: 22 });
 
+  // Reveal on scroll – add .visible when element enters viewport
   useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
     const onMouseMove = (e) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      mouseX.set((e.clientX / window.innerWidth  - 0.5) * 2);
+      mouseY.set((e.clientY / window.innerHeight - 0.5) * 2);
+      if (cursor && ring) {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+        ring.style.left = `${e.clientX}px`;
+        ring.style.top = `${e.clientY}px`;
+      }
     };
     window.addEventListener('mousemove', onMouseMove);
     return () => window.removeEventListener('mousemove', onMouseMove);
@@ -45,6 +66,10 @@ function App() {
           left: 0,
         }}
       />
+
+      {/* Custom cursor */}
+      <div id="cursor"></div>
+      <div id="cursor-ring"></div>
 
       <main className="relative z-10">
         <Header />

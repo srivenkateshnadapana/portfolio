@@ -81,7 +81,7 @@ const Hero = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full bg-[#0a0a0a] overflow-hidden">
+    <section id="hero" ref={containerRef} className="relative h-screen w-full bg-[#0a0a0a] overflow-hidden">
       
       {/* Layer 0 — subtle ambient nebula glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">

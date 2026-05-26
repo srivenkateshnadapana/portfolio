@@ -46,7 +46,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="relative py-32 px-6 md:px-24 bg-[#0a0a0a]">
+    <section id="projects" className="relative py-32 px-6 md:px-24 bg-[#0a0a0a] reveal">
 
       <motion.div
         className="flex items-center gap-4 mb-16"

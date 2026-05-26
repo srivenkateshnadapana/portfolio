@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { copyEmailAndToast } from '../utils/toast';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +44,8 @@ const Header = () => {
 
         <a
           href="mailto:nadapanasrivenkatesh1@gmail.com"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium text-white"
+          onClick={(e) => copyEmailAndToast(e)}
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium text-white cursor-pointer"
           style={{
             background: 'linear-gradient(135deg, #6366f1, #a855f7)',
             boxShadow: '0 0 20px rgba(99,102,241,0.3)',
@@ -78,6 +80,20 @@ const Header = () => {
                 {item}
               </a>
             ))}
+            <a
+              href="mailto:nadapanasrivenkatesh1@gmail.com"
+              onClick={(e) => {
+                setIsMobileMenuOpen(false);
+                copyEmailAndToast(e);
+              }}
+              className="mt-2 inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium text-white"
+              style={{
+                background: 'linear-gradient(135deg, #6366f1, #a855f7)',
+                boxShadow: '0 0 20px rgba(99,102,241,0.3)',
+              }}
+            >
+              Hire Me
+            </a>
           </div>
         </div>
       )}

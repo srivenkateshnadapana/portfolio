@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { copyEmailAndToast } from '../utils/toast';
 
 const Contact = () => {
   return (
-    <section id="contact" className="relative py-32 px-6 md:px-24 bg-[#0d0d0d] overflow-hidden">
+    <section id="contact" className="relative py-32 px-6 md:px-24 bg-[#0d0d0d] overflow-hidden reveal">
       {/* Bottom ambient glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#6366f1] opacity-10 blur-[100px] pointer-events-none" />
 
@@ -43,7 +44,8 @@ const Contact = () => {
 
         <motion.a
           href="mailto:nadapanasrivenkatesh1@gmail.com"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg mb-16 transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)]"
+          onClick={(e) => copyEmailAndToast(e)}
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg mb-16 transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] cursor-pointer"
           style={{
             background: 'linear-gradient(135deg, #6366f1, #a855f7)',
             boxShadow: '0 0 40px rgba(99,102,241,0.4)',
@@ -66,7 +68,7 @@ const Contact = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <a
-            href="https://linkedin.com/in/nadapanasrivenkatesh"
+            href="https://www.linkedin.com/in/sri-venkatesh-nadapana-592471280/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"
@@ -76,7 +78,7 @@ const Contact = () => {
             <span>LinkedIn</span>
           </a>
           <a
-            href="https://github.com/nadapanasrivenkatesh"
+            href="https://github.com/srivenkateshnadapana"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 text-sm font-medium transition-all duration-300 hover:border-white/30"

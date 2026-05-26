@@ -73,7 +73,7 @@ const About = () => {
   return (
     <motion.section
       id="about"
-      className="relative py-32 px-6 md:px-24 bg-[#0a0a0a]"
+      className="relative py-32 px-6 md:px-24 bg-[#0a0a0a] reveal"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.05 }}

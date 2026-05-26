@@ -61,7 +61,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="relative py-32 px-6 md:px-24 bg-[#0d0d0d]">
+    <section id="experience" className="relative py-32 px-6 md:px-24 bg-[#0d0d0d] reveal">
 
       <motion.div
         className="flex items-center gap-4 mb-16"

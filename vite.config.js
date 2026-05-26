@@ -11,14 +11,11 @@ export default defineConfig({
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Core React runtime
-          'vendor-react': ['react', 'react-dom'],
-          // Animation library
-          'vendor-framer': ['framer-motion'],
-          'vendor-gsap': ['gsap', '@gsap/react'],
-          // Icon library
-          'vendor-icons': ['react-icons', 'lucide-react'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react') && id.includes('react-dom')) return 'vendor-react';
+          if (id.includes('node_modules/framer-motion')) return 'vendor-framer';
+          if (id.includes('node_modules/gsap') || id.includes('@gsap/react')) return 'vendor-gsap';
+          if (id.includes('node_modules/react-icons') || id.includes('lucide-react')) return 'vendor-icons';
         },
       },
     },
