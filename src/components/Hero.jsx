@@ -22,6 +22,10 @@ const Hero = () => {
   const opacity2 = useTransform(scrollYProgress, [0.25, 0.35, 0.55, 0.65], [0, 1, 1, 0]);
   const opacity3 = useTransform(scrollYProgress, [0.58, 0.70, 0.90, 1.0], [0, 1, 1, 0]);
 
+  // ── Premium slide horizontal parallax offsets ──
+  const slide2X = useTransform(scrollYProgress, [0.25, 0.35, 0.55, 0.65], ['-80px', '0px', '0px', '-80px']);
+  const slide3X = useTransform(scrollYProgress, [0.58, 0.70, 0.90, 1.0], ['80px', '0px', '0px', '80px']);
+
   // ── Mouse parallax for the holographic canvas ─────────────────────────────
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -98,40 +102,50 @@ const Hero = () => {
           {/* SLIDE 2 — Left-aligned "What I Do" card (height: 100vh) */}
           <motion.div
             className="w-full h-screen shrink-0 flex flex-col items-start justify-center px-8 md:px-24"
-            style={{ opacity: opacity2 }}
+            style={{ opacity: opacity2, x: slide2X }}
           >
-            <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#6366f1] uppercase mb-3 font-light">
-              WHAT I DO
-            </p>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
-              I build digital{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">
-                experiences.
-              </span>
-            </h2>
-            <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-sm">
-              MERN Stack&nbsp;·&nbsp;AI Integration&nbsp;·&nbsp;Creative Front-End
-            </p>
+            <div className="relative p-8 md:p-12 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md max-w-2xl shadow-2xl shadow-black/50 overflow-hidden group pointer-events-auto select-text">
+              {/* Subtle spotlight glow */}
+              <div className="pointer-events-none absolute -inset-px bg-gradient-to-r from-[#10b981]/10 to-[#6366f1]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+              
+              <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#6366f1] uppercase mb-4 font-light relative z-10">
+                WHAT I DO
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight relative z-10">
+                I build digital{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#6366f1]">
+                  experiences.
+                </span>
+              </h2>
+              <p className="mt-5 text-white/50 text-sm md:text-base font-light relative z-10">
+                MERN Stack&nbsp;·&nbsp;AI Integration&nbsp;·&nbsp;Creative Front-End
+              </p>
+            </div>
           </motion.div>
 
           {/* SLIDE 3 — Philosophy card (height: 100vh) */}
           <motion.div
             className="w-full h-screen shrink-0 flex flex-col items-end justify-center px-8 md:px-24 text-right"
-            style={{ opacity: opacity3 }}
+            style={{ opacity: opacity3, x: slide3X }}
           >
-            <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#f59e0b] uppercase mb-3 font-light">
-              MY PHILOSOPHY
-            </p>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
-              Bridging{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">
-                hardware
-              </span>{' '}
-              &amp; software.
-            </h2>
-            <p className="mt-5 text-white/45 text-base md:text-lg font-light max-w-md">
-              Robotics&nbsp;·&nbsp;IoT Systems&nbsp;·&nbsp;High-Impact Mentorship
-            </p>
+            <div className="relative p-8 md:p-12 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md max-w-2xl shadow-2xl shadow-black/50 overflow-hidden group text-right flex flex-col items-end pointer-events-auto select-text">
+              {/* Subtle spotlight glow */}
+              <div className="pointer-events-none absolute -inset-px bg-gradient-to-r from-[#f59e0b]/10 to-[#ef4444]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+
+              <p className="text-[11px] md:text-xs tracking-[0.4em] text-[#f59e0b] uppercase mb-4 font-light relative z-10">
+                MY PHILOSOPHY
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight relative z-10">
+                Bridging{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">
+                  hardware
+                </span>{' '}
+                &amp; software.
+              </h2>
+              <p className="mt-5 text-white/50 text-sm md:text-base font-light relative z-10">
+                Robotics&nbsp;·&nbsp;IoT Systems&nbsp;·&nbsp;High-Impact Mentorship
+              </p>
+            </div>
           </motion.div>
         </motion.div>
 
