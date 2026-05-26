@@ -15,7 +15,7 @@ const experiences = [
   {
     role: 'Associate Developer',
     company: 'Adhoc Network Tech',
-    date: 'Dec 2025 – May 2026',
+    date: 'Mar 2026 – Present',
     location: 'Vizag, A.P',
     color: '#a855f7',
     details: [
@@ -27,7 +27,7 @@ const experiences = [
   {
     role: 'Senior Technical Trainer',
     company: 'Adhoc Network Tech',
-    date: 'Aug 2025 – Present',
+    date: 'Aug 2025 – Mar 2026',
     location: 'Onsite / Remote & Vizag, A.P',
     color: '#6366f1',
     details: [
