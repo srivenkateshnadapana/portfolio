@@ -5,7 +5,7 @@ const experiences = [
   {
     role: 'Data Analytics Internship Mentor',
     company: 'Aditya Degree College',
-    date: 'March 2026',
+    date: 'Dec 2025 – Mar 2026',
     location: 'India',
     color: '#10b981',
     details: [
