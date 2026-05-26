@@ -28,7 +28,7 @@ const experiences = [
     role: 'Senior Technical Trainer',
     company: 'Adhoc Network Tech',
     date: 'Aug 2025 – Present',
-    location: 'Onsite / Remote',
+    location: 'Onsite / Remote & Vizag, A.P',
     color: '#6366f1',
     details: [
       'Leading technical training for MERN stack, DevOps, and AI. Developing comprehensive curricula for long-term and short-term technical internships.',
